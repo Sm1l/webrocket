@@ -35,6 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Templates
+# templates
 templates
 generate-react-cli.json

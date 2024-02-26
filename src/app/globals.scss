@@ -35,7 +35,6 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-
   text-wrap: balance;
 }
 
@@ -94,5 +93,64 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+//* myGlobalStyles
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 146%;
+}
+
+span {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  span {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  span {
+    font-size: 16px;
   }
 }

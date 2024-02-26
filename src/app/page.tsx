@@ -1,8 +1,8 @@
 import { About } from "@/components/About";
 import { Communication } from "@/components/Communication";
-import styles from "./page.module.scss";
 import { Welcome } from "@/components/Welcome";
 import { WelcomeSlider } from "@/components/WelcomeSlider";
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (
