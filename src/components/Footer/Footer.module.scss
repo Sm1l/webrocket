@@ -1,0 +1,14 @@
+.footer {
+  background-color: var(--color-gray);
+  box-shadow: var(--shadow-top);
+}
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+  gap: 60px;
+}

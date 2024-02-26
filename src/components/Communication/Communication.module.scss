@@ -1,0 +1,16 @@
+.communication {
+  width: 100%;
+  max-width: var(--container-width);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+@media (min-width: 1024px) {
+  .communication {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, minmax(400px, 500px));
+  }
+}

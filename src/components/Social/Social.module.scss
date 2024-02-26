@@ -1,0 +1,27 @@
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socialLink {
+  max-width: 30px;
+  height: 25px;
+  min-width: 25px;
+}
+
+.socialImg path {
+  width: auto;
+  height: 100%;
+  fill: var(--color-violet);
+  transition: fill 300ms ease-out;
+}
+
+@media (hover: hover) {
+  .socialLink:hover .socialImg path {
+    fill: var(--color-lavender);
+    transition: fill 300ms ease-out;
+  }
+}
