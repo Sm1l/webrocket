@@ -56,7 +56,6 @@ li {
 
 button {
   border: none;
-
   cursor: pointer;
 }
 
@@ -71,6 +70,7 @@ video {
 input,
 button,
 a {
+  color: inherit;
   &:focus {
     outline: 1px dotted var(--color-lavender);
   }
