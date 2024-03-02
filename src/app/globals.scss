@@ -68,9 +68,14 @@ video {
 }
 
 input,
-button,
 a {
   color: inherit;
+  &:focus {
+    outline: 1px dotted var(--color-lavender);
+  }
+}
+
+button {
   &:focus {
     outline: 1px dotted var(--color-lavender);
   }
@@ -109,7 +114,9 @@ h3 {
   font-weight: 400;
 }
 
-p {
+p,
+button,
+input {
   font-size: 14px;
   font-weight: 300;
   line-height: 146%;
@@ -129,7 +136,9 @@ span {
     font-size: 24px;
   }
 
-  p {
+  p,
+  button,
+  input {
     font-size: 17px;
   }
 
@@ -147,7 +156,9 @@ span {
     font-size: 30px;
   }
 
-  p {
+  p,
+  button,
+  input {
     font-size: 18px;
   }
 

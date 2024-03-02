@@ -7,12 +7,12 @@ import Swiper from "swiper";
 import "swiper/element/bundle";
 import "swiper/swiper-bundle.css";
 import "./swiper.scss";
-import styles from "./WelcomeSlider.module.scss";
+import styles from "./ProjectsSlider.module.scss";
 import { SliderAbout } from "../SliderAbout";
 
-interface WelcomeSliderProps {}
+interface ProjectsSliderProps {}
 
-const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
+const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
   const swiperRef = useRef(null);
   const paginationRef = useRef(null);
   const nextButtonRef = useRef(null);
@@ -50,7 +50,7 @@ const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 1.4,
+            slidesPerView: 1.3,
             spaceBetween: 20,
           },
         },
@@ -63,7 +63,7 @@ const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
   }, []);
 
   return (
-    <div className={styles.welcomeSlider}>
+    <div className={styles.projectsSlider}>
       <div className={styles.slider}>
         <div
           className="swiper swiper-container sliderContainer"
@@ -104,4 +104,4 @@ const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
   );
 };
 
-export { WelcomeSlider };
+export { ProjectsSlider };

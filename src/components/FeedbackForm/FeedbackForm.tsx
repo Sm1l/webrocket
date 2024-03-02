@@ -37,7 +37,6 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
           }
           id="name"
           type="text"
-          autoComplete="off"
           placeholder="Иван"
           {...register("name", {
             required: "Это поле обязательно",
@@ -55,8 +54,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
             errors?.tel ? `${styles.input} ${styles.inputError}` : styles.input
           }
           id="tel"
-          type="number"
-          autoComplete="off"
+          type="tel"
           placeholder="+7 (900) 120-30-40"
           {...register("tel", {
             required: "Это поле обязательно",
@@ -79,8 +77,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
               : styles.input
           }
           id="email"
-          type="text"
-          autoComplete="off"
+          type="email"
           placeholder="E-mail"
           {...register("email", {
             required: "Это поле обязательно",

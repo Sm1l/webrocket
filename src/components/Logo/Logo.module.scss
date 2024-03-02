@@ -1,5 +1,5 @@
 .logo {
-  min-width: 107.85px;
+  min-width: 65px;
   height: auto;
 }
 
@@ -11,4 +11,10 @@
 .logoTitle {
   display: none;
   opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    min-width: 107.85px;
+  }
 }

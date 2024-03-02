@@ -31,7 +31,7 @@ const RoundElement: React.FC<RoundElementProps> = ({
 
   return (
     <div className={`${styles.roundElement} ${roundSize(size)}`} {...props}>
-      {text}
+      <span>{text}</span>
     </div>
   );
 };

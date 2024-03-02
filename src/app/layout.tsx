@@ -33,16 +33,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mySite.com"), //!изменить
   title: "ВЕБ рокет",
   description: "Разработка сайтов, Outsourse, Outstaff",
-  keywords: "разработка сайтов, купить сайт, outsourse, outstaff",
+  keywords: "разработка сайтов, купить сайт, outsourse, outstaff", //!
   openGraph: {
     title: "ВЕБ рокет",
     description: "Разработка сайтов, Outsourse, Outstaff",
     url: "https://mySite.com", //!изменить
     images: "/og-image.jpg", //!изменить
   },
-
-  // manifest: "./favicon/site.webmanifest",
-  //   icons: [{ rel: "icon", url: "./favicon/favicon.ico" }],
   //!добавить метаданные
 };
 
@@ -80,7 +77,6 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#d3a7ff"></meta>
         <meta name="theme-color" content="#d3a7ff"></meta>
       </head>
-
       <body className={`${gilroy.className}`}>
         <Header />
         <Main>{children}</Main>

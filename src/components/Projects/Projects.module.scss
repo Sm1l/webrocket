@@ -1,14 +1,9 @@
-.home {
+.projects {
   width: 100%;
+  max-width: var(--max-width);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-}
-
-@media (min-width: 768px) {
-  .home {
-    gap: 100px;
-  }
+  gap: 20px;
 }

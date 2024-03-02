@@ -3,10 +3,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   text-align: center;
+}
+
+.contactsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .link {
   transition: all 300ms ease-out;
+}
+
+@media (min-width: 768px) {
+  .contacts {
+    gap: 40px;
+  }
 }

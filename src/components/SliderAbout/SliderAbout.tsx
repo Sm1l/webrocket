@@ -17,8 +17,12 @@ const SliderAbout: React.FC<SliderAboutProps> = () => {
         <div className={styles.feature}>
           <span>UI/UX</span>
         </div>
-        <div className={styles.feature}>Landing Page</div>
-        <div className={styles.feature}>Design </div>
+        <div className={styles.feature}>
+          <span>Landing Page</span>
+        </div>
+        <div className={styles.feature}>
+          <span>Design</span>
+        </div>
       </div>
     </div>
   );

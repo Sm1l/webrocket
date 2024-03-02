@@ -4,8 +4,15 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  padding: 40px 80px;
+  padding: 30px 40px;
   box-shadow: var(--shadow-bottom);
   border-radius: 60px;
-  gap: 40px;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .feedback {
+    padding: 40px 80px;
+    gap: 40px;
+  }
 }
