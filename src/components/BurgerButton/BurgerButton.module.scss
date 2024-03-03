@@ -53,18 +53,18 @@
 .burgerButton.close {
   transition: all 400ms ease-out;
   &::before {
-    width: 32px;
+    width: 34px;
     background-color: var(--color-violet);
     transform: rotate(45deg) translateX(4px) translateY(10px);
   }
 
   &::after {
-    width: 32px;
+    width: 34px;
     background-color: var(--color-violet);
     transform: rotate(-45deg) translateX(4px) translateY(-10px);
   }
 
   & span {
-    transform: translateX(-100px) scale(0);
+    transform: translateX(-200px) scale(0);
   }
 }

@@ -12,6 +12,10 @@ const BurgerButton: React.FC<BurgerButtonProps> = ({
   menuIsActive,
   setMenuIsActive,
 }) => {
+  const buttonHandleClick = () => {
+    setMenuIsActive(!menuIsActive);
+  };
+
   return (
     <button
       className={
@@ -19,9 +23,7 @@ const BurgerButton: React.FC<BurgerButtonProps> = ({
           ? `${styles.burgerButton} ${styles.close}`
           : `${styles.burgerButton}`
       }
-      onClick={() => {
-        setMenuIsActive(!menuIsActive);
-      }}
+      onClick={buttonHandleClick}
     >
       <span></span>
     </button>

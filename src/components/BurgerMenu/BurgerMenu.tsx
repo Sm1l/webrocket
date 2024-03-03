@@ -13,6 +13,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
   menuIsActive,
   setMenuIsActive,
 }) => {
+  const closeHandleClick = () => {
+    setMenuIsActive(!menuIsActive);
+  };
   return (
     <div
       className={
@@ -37,22 +40,38 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
         <nav>
           <ul className={styles.navList}>
             <li>
-              <Link className={styles.link} href="#projects">
+              <Link
+                className={styles.link}
+                href="#projects"
+                onClick={closeHandleClick}
+              >
                 <p>Наши проекты</p>
               </Link>
             </li>
             <li>
-              <Link className={styles.link} href="#about">
+              <Link
+                className={styles.link}
+                href="#about"
+                onClick={closeHandleClick}
+              >
                 <p>О студии</p>
               </Link>
             </li>
             <li>
-              <Link className={styles.link} href="#contacts">
+              <Link
+                className={styles.link}
+                href="#policy"
+                onClick={closeHandleClick}
+              >
                 <p>Политика конфеденциальности</p>
               </Link>
             </li>
             <li>
-              <Link className={styles.link} href="#questions">
+              <Link
+                className={styles.link}
+                href="#questions"
+                onClick={closeHandleClick}
+              >
                 <p>Вопросы</p>
               </Link>
             </li>
