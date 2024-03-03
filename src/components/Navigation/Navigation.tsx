@@ -1,21 +1,22 @@
 import React from "react";
 
 import styles from "./Navigation.module.scss";
+import Link from "next/link";
 
 interface NavigationProps {}
 
 const Navigation: React.FC<NavigationProps> = () => {
   return (
     <nav className={styles.navigation}>
-      <a className={styles.link} href="#projects">
+      <Link className={styles.link} href="#projects">
         Наши проекты
-      </a>
-      <a className={styles.link} href="#about">
+      </Link>
+      <Link className={styles.link} href="#about">
         О студии
-      </a>
-      <a className={styles.link} href="#contacts">
+      </Link>
+      <Link className={styles.link} href="#contacts">
         Контакты
-      </a>
+      </Link>
     </nav>
   );
 };

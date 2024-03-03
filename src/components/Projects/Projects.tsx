@@ -7,10 +7,10 @@ interface ProjectsProps {}
 
 const Projects: React.FC<ProjectsProps> = () => {
   return (
-    <div className={styles.projects}>
+    <section className={styles.projects} id="projects">
       <h2 className={styles.title}>Наши проекты</h2>
       <ProjectsSlider />
-    </div>
+    </section>
   );
 };
 

@@ -8,10 +8,10 @@ interface CommunicationProps {}
 
 const Communication: React.FC<CommunicationProps> = () => {
   return (
-    <div className={styles.communication}>
+    <section className={styles.communication} id="communication">
       <Feedback />
       <Contacts />
-    </div>
+    </section>
   );
 };
 

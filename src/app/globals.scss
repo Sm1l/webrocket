@@ -127,7 +127,21 @@ span {
   font-weight: 300;
 }
 
+#about,
+#contacts,
+#projects,
+#welcome {
+  scroll-margin-top: 60px;
+}
+
 @media (min-width: 768px) {
+  #about,
+  #contacts,
+  #projects,
+  #welcome {
+    scroll-margin-top: 100px;
+  }
+
   h2 {
     font-size: 30px;
   }

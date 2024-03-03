@@ -6,7 +6,7 @@ interface ContactsProps {}
 
 const Contacts: React.FC<ContactsProps> = () => {
   return (
-    <section className={styles.contacts}>
+    <section className={styles.contacts} id="contacts">
       <h2>Наши контакты</h2>
       <div className={styles.contactsContainer}>
         <h3>ООО &quot;ВебРокет&quot;</h3>

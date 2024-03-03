@@ -10,7 +10,7 @@ interface WelcomeProps {}
 
 const Welcome: React.FC<WelcomeProps> = () => {
   return (
-    <div className={styles.welcome}>
+    <section className={styles.welcome} id="welcome">
       <div className={styles.contentContainer}>
         <h2>
           Разработка сайтов <br />
@@ -32,7 +32,7 @@ const Welcome: React.FC<WelcomeProps> = () => {
           priority
         />
       </div>
-    </div>
+    </section>
   );
 };
 

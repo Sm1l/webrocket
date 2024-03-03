@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Welcome />
-      <Projects />
+      {/* <Projects />  */}
       <About />
       <Communication />
     </div>

@@ -77,7 +77,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#d3a7ff"></meta>
         <meta name="theme-color" content="#d3a7ff"></meta>
       </head>
-      <body className={`${gilroy.className}`}>
+      <body className={`${gilroy.className}`} id="body">
         <Header />
         <Main>{children}</Main>
         <Footer />

@@ -1,6 +1,9 @@
 .header {
   background-color: var(--color-gray);
   box-shadow: var(--shadow-bottom);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 
 .headerContainer {
@@ -9,6 +12,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 25px 0;
+  padding: 10px 0;
   gap: 60px;
+}
+
+@media (min-width: 768px) {
+  .headerContainer {
+    padding: 15px 0;
+  }
 }
