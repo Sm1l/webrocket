@@ -28,12 +28,20 @@
 }
 
 .feature {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 30px;
-  border: 2px solid var(--color-violet);
-  text-align: center;
-  line-height: 100%;
+  display: none;
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .feature {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 30px;
+    border: 2px solid var(--color-violet);
+    text-align: center;
+    line-height: 100%;
+  }
 }

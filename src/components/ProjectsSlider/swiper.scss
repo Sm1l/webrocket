@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+.swiper-pagination-bullet {
+  color: var(--color-violet);
+}
+
 //*custom arrows
 .sliderContainer .swiper-button-next,
 .sliderContainer .swiper-button-prev {
