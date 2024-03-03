@@ -58,6 +58,9 @@ button {
   border: none;
   cursor: pointer;
   color: inherit;
+  &:disabled {
+    color: rgba(255, 255, 255, 0.3);
+  }
 }
 
 img,

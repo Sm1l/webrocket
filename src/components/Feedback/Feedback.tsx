@@ -7,7 +7,7 @@ interface FeedbackProps {}
 
 const Feedback: React.FC<FeedbackProps> = () => {
   return (
-    <section className={styles.feedback}>
+    <section className={styles.feedback} id="feedback">
       <h3>Оставьте заявку и мы c Вами свяжемся</h3>
       <FeedbackForm />
     </section>

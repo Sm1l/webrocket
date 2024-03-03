@@ -5,6 +5,7 @@ import { Button } from "../Button";
 import backgroundImage from "../../../public/images/figure1.png";
 
 import styles from "./Welcome.module.scss";
+import Link from "next/link";
 
 interface WelcomeProps {}
 
@@ -22,7 +23,9 @@ const Welcome: React.FC<WelcomeProps> = () => {
           контент-маркетинг, контекстную рекламу и другое. <br /> Обеспечим
           эффективную работу сайта и индивидуальный подход к каждому заказу.
         </p>
-        <Button text="Оставить заявку" type="button" arrow={true} />
+        <Link href="#feedback">
+          <Button text="Оставить заявку" type="button" arrow={true} />
+        </Link>
       </div>
       <div className={styles.imageContainer}>
         <Image
