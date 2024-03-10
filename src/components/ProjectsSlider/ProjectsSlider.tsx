@@ -7,7 +7,8 @@ import "swiper/element/bundle";
 import "swiper/swiper-bundle.css";
 import "./swiper.scss";
 import styles from "./ProjectsSlider.module.scss";
-import { SliderAbout } from "../SliderAbout";
+import { ProjectsAbout } from "../ProjectsAbout";
+import { projectsData } from "@/Data/ProjectsData";
 
 interface ProjectsSliderProps {}
 
@@ -16,15 +17,6 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
   const paginationRef = useRef(null);
   const nextButtonRef = useRef(null);
   const prevButtonRef = useRef(null);
-
-  const imgList: string[] = [
-    "/images/projects_image1.jpg",
-    "/images/projects_image2.jpg",
-    "/images/projects_image3.jpg",
-    "/images/projects_image1.jpg",
-    "/images/projects_image2.jpg",
-    "/images/projects_image3.jpg",
-  ];
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -76,13 +68,13 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
       <div className={styles.slider}>
         <div className="swiper swiper-container" ref={swiperRef}>
           <div className="swiper-wrapper">
-            {imgList.map((item, index) => (
-              <div key={index} className="swiper-slide">
+            {projectsData.map((project) => (
+              <div key={project.id} className="swiper-slide">
                 <div className={styles.slideContainer}>
                   <img
                     className={styles.img}
-                    src={item}
-                    alt={`image ${index}`}
+                    src={project.image}
+                    alt={`image ${project.id}`}
                   />
                   {/* <Image
                     className={styles.img}
@@ -91,8 +83,7 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
                     layout="fill"
                     objectFit="cover"
                   /> */}
-                  {/* //!map */}
-                  <SliderAbout />
+                  <ProjectsAbout projectData={project} />
                 </div>
               </div>
             ))}
