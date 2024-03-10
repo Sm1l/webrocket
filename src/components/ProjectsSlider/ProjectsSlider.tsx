@@ -72,13 +72,7 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
   }, []);
 
   return (
-    <div
-      className={styles.projectsSlider}
-      style={{
-        "--swiper-navigation-color": "#b061ff",
-        "--swiper-pagination-color": "#b061ff",
-      }}
-    >
+    <div className={styles.projectsSlider}>
       <div className={styles.slider}>
         <div className="swiper swiper-container" ref={swiperRef}>
           <div className="swiper-wrapper">
