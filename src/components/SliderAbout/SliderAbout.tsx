@@ -9,7 +9,11 @@ const SliderAbout: React.FC<SliderAboutProps> = () => {
     <div className={styles.sliderAbout}>
       <div className={styles.textContainer}>
         <h3>Библиотека Lo-Fi музыки</h3>
-        <a className={styles.link} href="https://lioger.github.io/waves/">
+        <a
+          className={styles.link}
+          href="https://lioger.github.io/waves/"
+          target="_blank"
+        >
           https://lioger.github.io/waves/
         </a>
       </div>

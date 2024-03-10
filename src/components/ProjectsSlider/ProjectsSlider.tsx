@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
@@ -19,6 +18,9 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
   const prevButtonRef = useRef(null);
 
   const imgList: string[] = [
+    "/images/projects_image1.jpg",
+    "/images/projects_image2.jpg",
+    "/images/projects_image3.jpg",
     "/images/projects_image1.jpg",
     "/images/projects_image2.jpg",
     "/images/projects_image3.jpg",
@@ -44,14 +46,21 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
         },
         effect: "coverflow",
         slideToClickedSlide: true,
+        coverflowEffect: {
+          slideShadows: false,
+        },
         breakpoints: {
           768: {
-            slidesPerView: 1,
+            slidesPerView: 1.1,
             spaceBetween: 10,
+            centeredSlides: false,
+            pagination: false,
           },
           1024: {
-            slidesPerView: 1.3,
+            slidesPerView: 1.4,
             spaceBetween: 20,
+            centeredSlides: true,
+            pagination: false,
           },
         },
       });
@@ -63,43 +72,42 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
   }, []);
 
   return (
-    <div className={styles.projectsSlider}>
+    <div
+      className={styles.projectsSlider}
+      style={{
+        "--swiper-navigation-color": "#b061ff",
+        "--swiper-pagination-color": "#b061ff",
+      }}
+    >
       <div className={styles.slider}>
-        <div
-          className="swiper swiper-container sliderContainer"
-          ref={swiperRef}
-        >
+        <div className="swiper swiper-container" ref={swiperRef}>
           <div className="swiper-wrapper">
             {imgList.map((item, index) => (
               <div key={index} className="swiper-slide">
-                <div className={styles.imgContainer}>
-                  <Image
+                <div className={styles.slideContainer}>
+                  <img
+                    className={styles.img}
+                    src={item}
+                    alt={`image ${index}`}
+                  />
+                  {/* <Image
                     className={styles.img}
                     src={item}
                     alt={`Image ${index}`}
-                    width={600}
-                    height={300}
-                  />
+                    layout="fill"
+                    objectFit="cover"
+                  /> */}
                   {/* //!map */}
                   <SliderAbout />
                 </div>
               </div>
             ))}
           </div>
-          <div
-            ref={nextButtonRef}
-            className="swiper-button-next sliderNextButton"
-          ></div>
-          <div
-            ref={prevButtonRef}
-            className="swiper-button-prev sliderPrevButton"
-          ></div>
+          <div ref={prevButtonRef} className="swiper-button-prev "></div>
+          <div ref={nextButtonRef} className="swiper-button-next "></div>
         </div>
       </div>
-      <div
-        className="swiper-pagination paginationContainer"
-        ref={paginationRef}
-      ></div>
+      <div className={styles.paginationContainer} ref={paginationRef}></div>
     </div>
   );
 };
