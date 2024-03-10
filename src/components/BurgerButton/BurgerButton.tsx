@@ -24,6 +24,7 @@ const BurgerButton: React.FC<BurgerButtonProps> = ({
           : `${styles.burgerButton}`
       }
       onClick={buttonHandleClick}
+      aria-label="menu button"
     >
       <span></span>
     </button>

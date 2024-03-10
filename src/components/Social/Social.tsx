@@ -11,6 +11,7 @@ const Social: React.FC<SocialProps> = () => {
         className={styles.socialLink}
         href="https://www.facebook.com/"
         target="_blank"
+        aria-label="facebook"
       >
         {/* //!ссылка */}
         <svg
@@ -31,6 +32,7 @@ const Social: React.FC<SocialProps> = () => {
         className={styles.socialLink}
         href="https://www.vk.com/"
         target="_blank"
+        aria-label="vkontakte"
       >
         {/* //!ссылка */}
         <svg
@@ -51,6 +53,7 @@ const Social: React.FC<SocialProps> = () => {
         className={styles.socialLink}
         href="https://www.instagram.com/"
         target="_blank"
+        aria-label="instagram"
       >
         {/* //!ссылка */}
         <svg
