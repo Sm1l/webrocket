@@ -1,0 +1,26 @@
+.welcomeBullet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 14px;
+  text-align: center;
+  gap: 4px;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+  }
+}
+
+.description,
+.price {
+  line-height: 100%;
+}

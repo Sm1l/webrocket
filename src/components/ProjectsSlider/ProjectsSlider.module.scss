@@ -1,5 +1,6 @@
 .projectsSlider {
-  width: calc(100vw - 20px);
+  width: 100%;
+  max-width: calc(100vw - 20px);
   height: 100%;
   display: flex;
   flex-direction: column;

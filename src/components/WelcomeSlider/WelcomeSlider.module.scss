@@ -1,0 +1,7 @@
+.welcomeSlider {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  max-width: var(--max-width);
+}

@@ -71,18 +71,11 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
             {projectsData.map((project) => (
               <div key={project.id} className="swiper-slide">
                 <div className={styles.slideContainer}>
-                  <img
+                  <Image
                     className={styles.img}
                     src={project.image}
-                    alt={`image ${project.id}`}
+                    alt={project.title}
                   />
-                  {/* <Image
-                    className={styles.img}
-                    src={item}
-                    alt={`Image ${index}`}
-                    layout="fill"
-                    objectFit="cover"
-                  /> */}
                   <ProjectsAbout projectData={project} />
                 </div>
               </div>

@@ -2,27 +2,36 @@ import React from "react";
 
 import Image from "next/image";
 import { Button } from "../Button";
-import backgroundImage from "../../../public/images/figure1.png";
+import { TWelcomeData } from "@/Data/WelcomeData";
 
 import styles from "./Welcome.module.scss";
 import Link from "next/link";
 
-interface WelcomeProps {}
+interface WelcomeProps {
+  welcomeData: TWelcomeData;
+}
 
-const Welcome: React.FC<WelcomeProps> = () => {
+interface TextWithLineBreaksProps {
+  text: string;
+}
+
+const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
+  const TextWithLineBreaks: React.FC<TextWithLineBreaksProps> = ({ text }) => {
+    const textWithBreaks = text.split("\n").map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        {index < text.split("\n").length - 1 && <br />}
+      </React.Fragment>
+    ));
+
+    return <h2>{textWithBreaks}</h2>;
+  };
+
   return (
-    <section className={styles.welcome} id="welcome">
+    <div className={styles.welcome} id="welcome">
       <div className={styles.contentContainer}>
-        <h2>
-          Разработка сайтов <br />
-          Outsourse <br />
-          Outstaff
-        </h2>
-        <p>
-          Предоставляем широкий спектр услуг, включая создание и дизайн сайтов,
-          контент-маркетинг, контекстную рекламу и другое. <br /> Обеспечим
-          эффективную работу сайта и индивидуальный подход к каждому заказу.
-        </p>
+        <TextWithLineBreaks text={welcomeData.title} />
+        <p>{welcomeData.description}</p>
         <Link href="#feedback">
           <Button text="Оставить заявку" type="button" arrow={true} />
         </Link>
@@ -30,12 +39,12 @@ const Welcome: React.FC<WelcomeProps> = () => {
       <div className={styles.imageContainer}>
         <Image
           className={styles.backgroundImg}
-          src={backgroundImage}
-          alt="background image"
+          src={welcomeData.image}
+          alt={welcomeData.title}
           priority
         />
       </div>
-    </section>
+    </div>
   );
 };
 
