@@ -21,9 +21,10 @@ const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<TSwiper | null>(null);
 
   return (
-    <section className={styles.welcomeSlider}>
+    <section className={styles.welcomeSlider} id="welcome">
       <Swiper
         // loop={true}
+        speed={600}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Thumbs]}
         className="welcomeMainSlider"

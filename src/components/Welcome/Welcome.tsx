@@ -5,7 +5,6 @@ import { Button } from "../Button";
 import { TWelcomeData } from "@/Data/WelcomeData";
 
 import styles from "./Welcome.module.scss";
-import Link from "next/link";
 
 interface WelcomeProps {
   welcomeData: TWelcomeData;
@@ -32,9 +31,9 @@ const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
       <div className={styles.contentContainer}>
         <TextWithLineBreaks text={welcomeData.title} />
         <p>{welcomeData.description}</p>
-        <Link href="#feedback">
+        <a href="#feedback">
           <Button text="Оставить заявку" type="button" arrow={true} />
-        </Link>
+        </a>
       </div>
       <div className={styles.imageContainer}>
         <Image
