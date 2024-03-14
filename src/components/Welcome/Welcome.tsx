@@ -29,8 +29,10 @@ const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
   return (
     <div className={styles.welcome} id="welcome">
       <div className={styles.contentContainer}>
-        <TextWithLineBreaks text={welcomeData.title} />
-        <p>{welcomeData.description}</p>
+        <div className={styles.textContainer}>
+          <TextWithLineBreaks text={welcomeData.title} />
+          <p>{welcomeData.description}</p>
+        </div>
         <a href="#feedback">
           <Button text="Оставить заявку" type="button" arrow={true} />
         </a>
