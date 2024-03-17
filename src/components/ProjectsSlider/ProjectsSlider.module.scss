@@ -41,3 +41,9 @@
   width: 0;
   height: 0;
 }
+
+@media (min-width: 768px) {
+  .slideContainer {
+    width: calc(100% - 10px);
+  }
+}

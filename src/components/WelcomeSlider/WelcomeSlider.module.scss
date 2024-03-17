@@ -2,6 +2,12 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr auto;
   max-width: var(--max-width);
+}
+@media (min-width: 1024px) {
+  .welcomeSlider {
+    min-height: calc(100vh - 100px);
+    // min-height: 100dvh;
+  }
 }

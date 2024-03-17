@@ -1,3 +1,4 @@
+// "use client";
 import React from "react";
 
 import { RoundElement } from "../RoundElement";
@@ -11,7 +12,7 @@ const About: React.FC<AboutProps> = () => {
       <div className={styles.aboutContainer}>
         <div className={styles.topContainer}>
           <h2>О студии</h2>
-          <p className={styles.text}>
+          <p>
             Мы занимаемся разработкой сайтов и приложений для самых разных сфер,
             одинаковое внимание уделяем бэкенд и фронтенд разработке.
             <br /> Также у нас вы можете заказать дизайн для своего проекта,
