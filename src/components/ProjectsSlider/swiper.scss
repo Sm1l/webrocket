@@ -8,6 +8,11 @@
   background-color: var(--color-violet) !important;
 }
 
+.swiper-slide {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 //*custom arrows
 .swiper-container .swiper-button-next,
 .swiper-container .swiper-button-prev {
@@ -38,7 +43,7 @@
 
 @media (min-width: 768px) {
   .swiper-slide {
-    padding-left: 10px;
+    padding-right: 0px;
   }
 }
 
