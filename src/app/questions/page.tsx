@@ -2,7 +2,7 @@ import styles from "./page.module.scss";
 
 export default function Questions() {
   return (
-    <div className={styles.policy}>
+    <div className={styles.questions}>
       <h2 className={styles.title}>Вопросы</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo hic

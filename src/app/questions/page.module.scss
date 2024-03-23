@@ -1,4 +1,4 @@
-.policy {
+.questions {
   width: 100%;
   max-width: var(--container-width);
   height: 100%;
@@ -12,10 +12,11 @@
 
 .title {
   text-align: center;
+  align-self: center;
 }
 
 @media (min-width: 768px) {
-  .policy {
+  .questions {
     gap: 40px;
   }
 }
