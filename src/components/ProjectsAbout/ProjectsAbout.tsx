@@ -11,9 +11,8 @@ const ProjectsAbout: React.FC<ProjectsAboutProps> = ({ projectData }) => {
   return (
     <div className={styles.projectsAbout} key={projectData.id}>
       <div className={styles.textContainer}>
-        <h3>{projectData.title}</h3>
         <a className={styles.link} href={projectData.href} target="_blank">
-          {projectData.href}
+          <h3>{projectData.title}</h3>
         </a>
       </div>
       <div className={styles.featuresContainer}>

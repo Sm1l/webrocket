@@ -21,15 +21,12 @@
   border-radius: 30px;
   border-bottom: 2px solid var(--color-violet);
   padding: 10px 60px 10px 20px;
+  transition: box-shadow 300ms ease-out;
 }
 
 .inputError {
   position: relative;
   border-bottom: 2px solid var(--color-lavender);
-  background-image: url("../../../public/images/close_square.svg");
-  background-repeat: no-repeat;
-  background-position: 97%;
-  background-size: 24px;
 }
 
 .input:focus {

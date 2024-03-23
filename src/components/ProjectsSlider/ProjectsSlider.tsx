@@ -21,9 +21,9 @@ const ProjectsSlider: React.FC<ProjectsSliderProps> = () => {
   useEffect(() => {
     if (swiperRef.current) {
       const swiper = new Swiper(swiperRef.current, {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        centeredSlides: true,
+        slidesPerView: 1.15,
+        spaceBetween: 4,
+        centeredSlides: false,
         speed: 600,
         navigation: {
           nextEl: nextButtonRef.current,
