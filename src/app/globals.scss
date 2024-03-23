@@ -14,7 +14,8 @@ body {
 
   //--------------------
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  grid-template-rows: 1fr auto; //header is absolute
   background-color: var(--color-gray);
 }
 
@@ -121,7 +122,9 @@ h3 {
 
 p,
 button,
-input {
+input,
+ul,
+li {
   font-size: 14px;
   font-weight: 300;
   line-height: 146%;
@@ -159,7 +162,9 @@ span {
 
   p,
   button,
-  input {
+  input,
+  ul,
+  li {
     font-size: 17px;
   }
 
@@ -179,7 +184,9 @@ span {
 
   p,
   button,
-  input {
+  input,
+  ul,
+  li {
     font-size: 18px;
   }
 

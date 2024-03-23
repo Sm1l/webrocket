@@ -42,7 +42,16 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
             <li>
               <Link
                 className={styles.link}
-                href="#projects"
+                href="/#welcome"
+                onClick={closeHandleClick}
+              >
+                <p>Наши услуги</p>
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={styles.link}
+                href="/#projects"
                 onClick={closeHandleClick}
               >
                 <p>Наши проекты</p>
@@ -51,7 +60,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
             <li>
               <Link
                 className={styles.link}
-                href="#about"
+                href="/#about"
                 onClick={closeHandleClick}
               >
                 <p>О студии</p>
@@ -60,7 +69,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
             <li>
               <Link
                 className={styles.link}
-                href="#policy"
+                href="/policy"
                 onClick={closeHandleClick}
               >
                 <p>Политика конфеденциальности</p>
@@ -69,7 +78,16 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
             <li>
               <Link
                 className={styles.link}
-                href="#questions"
+                href="/concent"
+                onClick={closeHandleClick}
+              >
+                <p>Согласие</p>
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={styles.link}
+                href="/questions"
                 onClick={closeHandleClick}
               >
                 <p>Вопросы</p>

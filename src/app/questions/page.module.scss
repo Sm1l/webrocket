@@ -1,0 +1,21 @@
+.policy {
+  width: 100%;
+  max-width: var(--container-width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 40px 10px 0px;
+}
+
+.title {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .policy {
+    gap: 40px;
+  }
+}

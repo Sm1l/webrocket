@@ -1,21 +1,22 @@
 import React from "react";
 
 import styles from "./NavigationFooter.module.scss";
+import Link from "next/link";
 
 interface NavigationFooterProps {}
 
 const NavigationFooter: React.FC<NavigationFooterProps> = () => {
   return (
     <nav className={styles.navigationFooter}>
-      <a className={styles.link} href="#policy">
+      <Link className={styles.link} href="/policy">
         Политика конфиденциальности
-      </a>
-      <a className={styles.link} href="#questions">
+      </Link>
+      <Link className={styles.link} href="/concent">
+        Согласие
+      </Link>
+      <Link className={styles.link} href="/questions">
         Вопросы
-      </a>
-      <a className={styles.link} href="#contacts">
-        Контакты
-      </a>
+      </Link>
     </nav>
   );
 };
