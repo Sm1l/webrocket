@@ -12,8 +12,8 @@ import { Welcome } from "../Welcome/Welcome";
 import { WelcomeBullet } from "../WelcomeBullet";
 import styles from "./WelcomeSlider.module.scss";
 
-import "./swiper.scss";
 import { welcomeData } from "@/Data/WelcomeData";
+import "./swiper.scss";
 
 interface WelcomeSliderProps {}
 

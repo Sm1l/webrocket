@@ -1,4 +1,9 @@
+import { Metadata } from "next";
 import styles from "./page.module.scss";
+
+export const metadata: Metadata = {
+  title: "ВЕБ рокет | Политика",
+};
 
 export default function Policy() {
   return (

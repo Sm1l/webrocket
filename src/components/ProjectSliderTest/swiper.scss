@@ -1,0 +1,48 @@
+//*custom arrows
+.projectSliderTest .swiper-button-next::after,
+.projectSliderTest .swiper-button-prev::after {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .projectSliderTest .swiper-button-next,
+  .projectSliderTest .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-button-prev {
+    background: url("../../../public/images/arrow_left.svg") no-repeat
+      center/contain;
+  }
+
+  .swiper-button-next {
+    background: url("../../../public/images/arrow_right.svg") no-repeat
+      center/contain;
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-slide {
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectSliderTest .swiper-button-next,
+  .projectSliderTest .swiper-button-prev {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+//*pagination
+.projectSliderTest .swiper-pagination {
+  --swiper-pagination-bottom: -6px;
+}
+
+.projectSliderTest .swiper-pagination-bullet {
+  background-color: var(--color-violet);
+  width: 12px;
+  height: 12px;
+}

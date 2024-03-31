@@ -4,8 +4,8 @@ import { Main } from "@/components/Main";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import "./globals.scss";
 import "../assets/variables.scss";
+import "./globals.scss";
 
 const gilroy = localFont({
   src: [
