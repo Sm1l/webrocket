@@ -5,22 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { projectsData } from "@/Data/ProjectsData";
 
 import "swiper/css";
-// import "swiper/css/free-mode";
-// import "swiper/css/thumbs";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 
-import styles from "./ProjectSliderTest.module.scss";
+import styles from "./ProjectSlider.module.scss";
 
 import "./swiper.scss";
 import { ProjectsAbout } from "../ProjectsAbout";
 
-interface ProjectSliderTestProps {}
+interface ProjectSliderProps {}
 
-const ProjectSliderTest: React.FC<ProjectSliderTestProps> = () => {
+const ProjectSlider: React.FC<ProjectSliderProps> = () => {
   return (
-    <div className={styles.projectSliderTest}>
+    <div className={styles.projectSlider}>
       <Swiper
         speed={600}
         effect={"coverflow"}
@@ -49,7 +47,7 @@ const ProjectSliderTest: React.FC<ProjectSliderTestProps> = () => {
             pagination: false,
           },
         }}
-        className="projectSliderTest"
+        className="projectSwiper"
       >
         {projectsData.map((project) => (
           <SwiperSlide key={project.id}>
@@ -68,4 +66,4 @@ const ProjectSliderTest: React.FC<ProjectSliderTestProps> = () => {
   );
 };
 
-export { ProjectSliderTest };
+export { ProjectSlider };
