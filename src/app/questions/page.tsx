@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import styles from "./page.module.scss";
+import { SingleQuestion } from "@/components/SingleQuestion";
+import { questionsData } from "../../Data/QuestionsData";
 
 export const metadata: Metadata = {
   title: "ВЕБ рокет | Вопросы",
@@ -9,24 +11,9 @@ export default function Questions() {
   return (
     <div className={styles.questions}>
       <h2 className={styles.title}>Вопросы</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo hic
-        temporibus itaque animi odit consequatur, officia porro fugit dolore
-        dolorem ut a reiciendis, dicta aperiam voluptatem quasi obcaecati!
-        Veritatis, quos? Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Nemo hic temporibus itaque animi odit consequatur, officia porro
-        fugit dolore dolorem ut a reiciendis, dicta aperiam voluptatem quasi
-        obcaecati! Veritatis, quos? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Nemo hic temporibus itaque animi odit consequatur,
-        officia porro fugit dolore dolorem ut a reiciendis, dicta aperiam
-        voluptatem quasi obcaecati! Veritatis, quos? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Nemo hic temporibus itaque animi odit
-        consequatur, officia porro fugit dolore dolorem ut a reiciendis, dicta
-        aperiam voluptatem quasi obcaecati! Veritatis, quos? Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Nemo hic temporibus itaque animi
-        odit consequatur, officia porro fugit dolore dolorem ut a reiciendis,
-        dicta aperiam voluptatem quasi obcaecati! Veritatis, quos?
-      </p>
+      {questionsData.map((question) => (
+        <SingleQuestion key={question.id} question={question} />
+      ))}
     </div>
   );
 }
