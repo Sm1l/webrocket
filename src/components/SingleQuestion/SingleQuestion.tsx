@@ -16,7 +16,14 @@ const SingleQuestion: React.FC<SingleQuestionProps> = ({ question }) => {
   };
 
   return (
-    <button className={styles.singleQuestion} onClick={openAnswer}>
+    <button
+      className={
+        isOpened
+          ? `${styles.singleQuestion} ${styles.isOpened}`
+          : `${styles.singleQuestion}`
+      }
+      onClick={openAnswer}
+    >
       <div className={styles.questionContainer}>
         <h3 className={styles.title}>{question.question}</h3>
         <div
