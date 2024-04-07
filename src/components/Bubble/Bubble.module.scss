@@ -1,0 +1,79 @@
+.bubble {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+
+  border-radius: 50%;
+
+  box-shadow: inset 0 0 25px rgb(#d3a7ff, 30%);
+
+  animation: fly 3000ms ease-in-out infinite;
+
+  &::before {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    content: "";
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-lavender);
+
+    filter: blur(2px);
+  }
+
+  &::after {
+    position: absolute;
+    top: 46%;
+    left: 46%;
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-white);
+
+    filter: blur(2px);
+  }
+
+  & span {
+    position: absolute;
+
+    border-radius: 50%;
+
+    &:nth-child(1) {
+      inset: 10px;
+
+      border-left: 6px solid var(--color-violet);
+
+      filter: blur(6px);
+    }
+
+    &:nth-child(2) {
+      inset: 10px;
+
+      border-right: 6px solid var(--color-lavender);
+
+      filter: blur(6px);
+    }
+  }
+}
+
+@keyframes fly {
+  0%,
+  100% {
+    transform: translateY(-2px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}

@@ -11,15 +11,15 @@
   align-items: center;
 
   width: 100%;
-  padding: 10px 0;
   min-height: 50px;
+  padding: 10px 0;
 }
 
 @media (width >= 768px) {
   .footerContainer {
     justify-content: center;
 
-    padding: 15px 0;
     min-height: 70px;
+    padding: 15px 0;
   }
 }

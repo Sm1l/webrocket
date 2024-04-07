@@ -32,6 +32,8 @@ const RoundElement: React.FC<RoundElementProps> = ({
   return (
     <div className={`${styles.roundElement} ${roundSize(size)}`} {...props}>
       <span>{text}</span>
+      <span className={styles.shadowLeft}></span>
+      <span className={styles.shadowRight}></span>
     </div>
   );
 };
