@@ -2,14 +2,16 @@
   --max-width: 1920px;
   --container-width: 1620px;
 
-  //color
+  // color
+
   --color-gray: #232323;
   --color-white: #ffffff;
   --color-violet: #b061ff;
   --color-lavender: #d3a7ff;
 
-  //shadow
-  --shadow-top: 0px -4px 44px rgba(0, 0, 0, 0.25);
-  --shadow-bottom: 0px 4px 44px rgba(0, 0, 0, 0.25);
+  // shadow
+
+  --shadow-top: 0px -4px 44px rgb(0 0 0 / 25%);
+  --shadow-bottom: 0px 4px 44px rgb(0 0 0 / 25%);
   --shadow-lavender: 0px 1px 8px var(--color-lavender);
 }

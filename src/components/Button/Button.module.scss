@@ -1,17 +1,21 @@
 .button {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
-  border-radius: 30px;
-  border: 2px solid var(--color-violet);
+  justify-content: center;
+  align-items: center;
+
   padding: 10px 12px;
+
+  border: 2px solid var(--color-violet);
+  border-radius: 30px;
+
   background-color: transparent;
+
   transition: all 300ms ease-out;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .button {
     padding: 15px 20px;
   }
@@ -19,25 +23,54 @@
 
 .arrow path {
   fill: var(--color-violet);
+
   transition: fill 300ms ease-out;
 }
 
 @media (hover: hover) {
   .button {
     &:hover {
-      transition: all 300ms ease-out;
+      &:disabled {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+
+        box-shadow: 0px 1px 8px rgba(255, 255, 255, 0.3);
+
+        & .arrow path {
+          fill: rgb(255, 255, 255, 0.3);
+
+          transition: fill 300ms ease-out;
+        }
+      }
+
+      &:enabled {
+        color: var(--color-lavender);
+
+        box-shadow: var(--shadow-lavender);
+
+        transition: all 300ms ease-out;
+
+        & .arrow path {
+          fill: var(--color-lavender);
+
+          transition: fill 300ms ease-out;
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+
       box-shadow: var(--shadow-lavender);
     }
+
     &:active {
       border: 2px solid var(--color-lavender);
     }
-    &:focus {
-      outline: none;
-      box-shadow: var(--shadow-lavender);
+
+    &:active .arrow path {
+      fill: var(--color-lavender);
+
+      transition: fill 300ms ease-out;
     }
-  }
-  .button:active .arrow path {
-    fill: var(--color-lavender);
-    transition: fill 300ms ease-out;
   }
 }

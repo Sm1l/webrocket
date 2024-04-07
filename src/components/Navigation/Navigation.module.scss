@@ -1,14 +1,16 @@
 .navigation {
   display: flex;
-  width: 100%;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
   max-width: 600px;
 }
 
 .link {
   text-align: center;
+
   transition: all 300ms ease-out;
 }

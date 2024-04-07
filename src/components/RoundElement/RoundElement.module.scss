@@ -3,17 +3,20 @@
   --width-medium: 54px;
   --width-large: 64px;
   --width-extra-large: 74px;
+  position: absolute;
 
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+
   padding: 4px;
+
+  font-size: inherit;
+  text-align: center;
+
   border: 2px solid var(--color-violet);
   border-radius: 50%;
   aspect-ratio: 1;
-  position: absolute;
-  font-size: inherit;
 }
 
 .small {
@@ -48,8 +51,8 @@
 }
 
 .roundElement:nth-child(4) {
-  bottom: 0;
   left: calc(50% - var(--width-extra-large) / 2);
+  bottom: 0;
 }
 
 .roundElement:nth-child(5) {
@@ -67,7 +70,7 @@
   right: 0;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .roundElement {
     --width-small: 72px;
     --width-medium: 88px;

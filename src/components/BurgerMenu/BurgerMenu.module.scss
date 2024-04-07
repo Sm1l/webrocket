@@ -1,10 +1,13 @@
 .burgerMenu {
   position: fixed;
-  width: 100vw;
-  height: calc(100% - 60px);
-  top: 60px;
+  top: 50px;
   left: 0;
+
+  width: 100vw;
+  height: calc(100% - 50px);
+
   transform: translateX(100%);
+
   transition: transform 200ms ease-out;
 
   &.active {
@@ -13,31 +16,39 @@
 }
 
 .background {
+  position: absolute;
+
   width: 100vw;
   height: 100vh;
+
   backdrop-filter: blur(2px);
-  position: absolute;
 }
 
 .content {
   position: absolute;
   top: 0;
   right: 0;
-  width: 80%;
-  height: 100%;
+
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
   gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 80%;
+  height: 100%;
   padding: 20px;
   padding-top: 80px;
+
   background-color: var(--color-gray);
+
   transform: translateX(100%);
+
   transition: transform 400ms ease-out;
 
   &.active {
     transform: translateX(0);
+
     transition: transform 400ms ease-out;
   }
 }
@@ -45,22 +56,22 @@
 .navList {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .contactsContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 10px;
+  align-items: flex-start;
 }
 
 .contacts {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   gap: 5px;
+  justify-content: center;
+  align-items: flex-start;
 }

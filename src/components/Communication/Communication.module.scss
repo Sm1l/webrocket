@@ -1,23 +1,26 @@
 .communication {
-  width: 100%;
-  max-width: var(--container-width);
   display: grid;
   grid-template-rows: 1fr auto;
-  align-items: center;
-  justify-content: center;
   gap: 40px;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: var(--container-width);
   padding: 0 10px;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .communication {
     gap: 60px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .communication {
     grid-template-rows: auto;
     grid-template-columns: repeat(2, minmax(400px, 500px));
+
+    padding: 0 20px;
   }
 }

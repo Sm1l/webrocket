@@ -1,20 +1,23 @@
 .footer {
   background-color: var(--color-gray);
+
   box-shadow: var(--shadow-top);
 }
 
 .footerContainer {
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
   gap: 60px;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 100%;
+  padding: 10px 0;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .footerContainer {
+    justify-content: center;
+
     padding: 15px 0;
   }
 }

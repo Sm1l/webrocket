@@ -1,43 +1,52 @@
 .feedbackForm {
   display: flex;
   flex-direction: column;
-  width: 100%;
   gap: 10px;
+
+  width: 100%;
 }
 
 .inputContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 8px;
+  align-items: flex-start;
 }
 
 .input {
   display: block;
+
   width: 100%;
   height: 42px;
-  background-color: inherit;
-  border: none;
-  border-radius: 30px;
-  border-bottom: 2px solid var(--color-violet);
   padding: 10px 20px;
+
+  border: none;
+  border-bottom: 2px solid var(--color-violet);
+  border-radius: 30px;
+
+  background-color: inherit;
+
   transition: box-shadow 300ms ease-out;
 }
 
 .inputError {
   position: relative;
+
   border-bottom: 2px solid var(--color-lavender);
 }
 
 .input:focus {
-  outline: none;
   border-bottom: 2px solid var(--color-lavender);
+
+  outline: none;
+
   box-shadow: var(--shadow-lavender);
 }
 
 .error {
   width: 100%;
   height: 20px;
+
   text-align: left;
 }
 
@@ -46,23 +55,24 @@
   font-size: 12px;
 }
 
-//убрать стрелки input[type="number"]
+// убрать стрелки input[type="number"]
 .input[type="number"]::-webkit-outer-spin-button,
 .input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 .input[type="number"],
 .input[type="number"]:hover,
 .input[type="number"]:focus {
   appearance: none;
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .feedbackForm {
     gap: 20px;
   }
+
   .input {
     height: 52px;
   }
