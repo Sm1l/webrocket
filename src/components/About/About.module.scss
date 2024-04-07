@@ -61,7 +61,6 @@
 .figure3Img {
   position: absolute;
   top: 0;
-  z-index: -1;
 
   height: auto;
   max-width: 700px;
@@ -77,6 +76,8 @@
 }
 
 .imageContainer {
+  z-index: -1;
+
   display: none;
 }
 
@@ -114,8 +115,7 @@
       max-width: 700px;
       max-height: 700px;
 
-      background: url("../../../public/images/figure2.png") center/cover
-        no-repeat;
+      background: url("../../../public/images/figure2.png") center/cover no-repeat;
     }
 
     &::after {
@@ -129,8 +129,7 @@
       max-width: 700px;
       max-height: 700px;
 
-      background: url("../../../public/images/figure3.png") center/cover
-        no-repeat;
+      background: url("../../../public/images/figure3.png") center/cover no-repeat;
     }
   }
 }
