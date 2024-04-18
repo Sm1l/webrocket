@@ -93,6 +93,12 @@ body {
     }
   }
 
+  @media (hover: hover) {
+    button:focus {
+      outline: 1px dotted var(--color-lavender);
+    }
+  }
+
   html {
     hanging-punctuation: first last;
   }
@@ -139,12 +145,6 @@ body {
 
     &:disabled {
       color: rgb(255 255 255 / 30%);
-    }
-  }
-
-  @media (hover: hover) {
-    button:focus {
-      outline: 1px dotted var(--color-lavender);
     }
   }
 
