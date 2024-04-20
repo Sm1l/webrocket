@@ -13,7 +13,7 @@ interface FeedbackModalProps {
 }
 
 const FeedbackModal: React.FC<FeedbackModalProps> = ({ submitModalIsVisible, closeModalHandleClick }) => {
-  const [countdown, setCountdown] = useState(5);
+  const [countdown, setCountdown] = useState(10);
 
   //*disable scroll
   useEffect(() => {
