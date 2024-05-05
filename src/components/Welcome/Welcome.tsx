@@ -1,8 +1,10 @@
 import React from "react";
 
+import { TWelcomeData } from "@/Data/WelcomeData";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "../Button";
-import { TWelcomeData } from "@/Data/WelcomeData";
+import { appearAnimation, appearAnimationRight } from "../../assets/animations";
 
 import styles from "./Welcome.module.scss";
 
@@ -16,10 +18,11 @@ interface TextWithLineBreaksProps {
 
 const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
   const TextWithLineBreaks: React.FC<TextWithLineBreaksProps> = ({ text }) => {
-    const textWithBreaks = text.split("\n").map((line, index) => (
+    const lines = text.split("\n");
+    const textWithBreaks = lines.map((line, index) => (
       <React.Fragment key={index}>
         {line}
-        {index < text.split("\n").length - 1 && <br />}
+        {index < lines.length - 1 && <br />}
       </React.Fragment>
     ));
 
@@ -27,20 +30,26 @@ const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
   };
 
   return (
-    <div className={styles.welcome} id="welcome">
+    <motion.div
+      className={styles.welcome}
+      id="welcome"
+      initial="initial"
+      whileInView="animate"
+      viewport={{ amount: 0.2, once: true }}
+    >
       <div className={styles.contentContainer}>
-        <div className={styles.textContainer}>
+        <motion.div className={styles.textContainer} variants={appearAnimationRight} custom={1}>
           <TextWithLineBreaks text={welcomeData.title} />
           <p>{welcomeData.description}</p>
-        </div>
-        <a href="#feedback">
+        </motion.div>
+        <motion.a href="#feedback" variants={appearAnimation} custom={2}>
           <Button text="Оставить заявку" type="button" arrow={true} />
-        </a>
+        </motion.a>
       </div>
-      <div className={styles.imageContainer}>
+      <motion.div className={styles.imageContainer} variants={appearAnimation} custom={3}>
         <Image className={styles.backgroundImg} src={welcomeData.image} alt={welcomeData.title} priority />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -1,9 +1,10 @@
 "use client";
-import React, { HTMLAttributes, useState } from "react";
+import React, { forwardRef, HTMLAttributes, useState } from "react";
 
-import styles from "./RoundElement.module.scss";
-import { Bubble } from "../Bubble";
+import { motion } from "framer-motion";
 import { nanoid } from "nanoid";
+import { Bubble } from "../Bubble";
+import styles from "./RoundElement.module.scss";
 
 type TSize = "s" | "m" | "l" | "xl";
 
@@ -12,7 +13,7 @@ interface RoundElementProps extends HTMLAttributes<HTMLDivElement> {
   size: TSize;
 }
 
-const RoundElement: React.FC<RoundElementProps> = ({ text, size, ...props }) => {
+const RoundElement = forwardRef<HTMLDivElement, RoundElementProps>(({ text, size, ...props }, ref) => {
   const roundSize = (size: TSize) => {
     switch (size) {
       case "s":
@@ -44,7 +45,7 @@ const RoundElement: React.FC<RoundElementProps> = ({ text, size, ...props }) => 
   };
 
   return (
-    <div className={`${styles.roundElement} ${roundSize(size)}`} {...props}>
+    <div className={`${styles.roundElement} ${roundSize(size)}`} {...props} ref={ref}>
       <button className={styles.roundElementButton} onClick={handleButtonClick}>
         <span>{text}</span>
         <span className={styles.shadowLeft}></span>
@@ -53,6 +54,8 @@ const RoundElement: React.FC<RoundElementProps> = ({ text, size, ...props }) => 
       {Object.entries(bubbles).map(([bubbleId, isVisible]) => isVisible && <Bubble key={bubbleId} />)}
     </div>
   );
-};
+});
 
+RoundElement.displayName = "RoundElement";
 export { RoundElement };
+export const MRoundElement = motion(RoundElement);

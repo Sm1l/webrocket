@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { projectsData } from "@/Data/ProjectsData";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,9 +17,10 @@ import { ProjectsAbout } from "../ProjectsAbout";
 
 interface ProjectSliderProps {}
 
-const ProjectSlider: React.FC<ProjectSliderProps> = () => {
+// const ProjectSlider: React.FC<ProjectSliderProps> = forwardRef((_, ref) => {
+const ProjectSlider = forwardRef<HTMLDivElement, ProjectSliderProps>((_, ref) => {
   return (
-    <div className={styles.projectSlider}>
+    <div className={styles.projectSlider} ref={ref}>
       <Swiper
         speed={600}
         effect={"coverflow"}
@@ -52,11 +54,7 @@ const ProjectSlider: React.FC<ProjectSliderProps> = () => {
         {projectsData.map((project) => (
           <SwiperSlide key={project.id}>
             <div className={styles.slideContainer}>
-              <Image
-                className={styles.img}
-                src={project.image}
-                alt={project.title}
-              />
+              <Image className={styles.img} src={project.image} alt={project.title} />
               <ProjectsAbout projectData={project} />
             </div>
           </SwiperSlide>
@@ -64,6 +62,8 @@ const ProjectSlider: React.FC<ProjectSliderProps> = () => {
       </Swiper>
     </div>
   );
-};
-
+});
+ProjectSlider.displayName = "ProjectSlider";
 export { ProjectSlider };
+
+export const MProjectSlider = motion(ProjectSlider);

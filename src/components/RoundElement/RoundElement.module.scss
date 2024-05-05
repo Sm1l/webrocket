@@ -199,49 +199,49 @@
   top: 0;
   left: 0;
 
-  animation: fly 3500ms ease-in-out infinite;
+  animation: fly 3500ms 2000ms ease-in-out infinite;
 }
 
 .roundElement:nth-child(2) {
   top: calc(33% - var(--width-medium) / 2);
   left: calc(17% - var(--width-medium) / 2);
 
-  animation: fly 3500ms 500ms ease-in-out infinite;
+  animation: fly 3500ms 2500ms ease-in-out infinite;
 }
 
 .roundElement:nth-child(3) {
   top: calc(58% - var(--width-large) / 2);
   left: calc(32% - var(--width-large) / 2);
 
-  animation: fly 3500ms 1000ms ease-in-out infinite;
+  animation: fly 3500ms 3000ms ease-in-out infinite;
 }
 
 .roundElement:nth-child(4) {
   left: calc(50% - var(--width-extra-large) / 2);
   bottom: 0;
 
-  animation: fly 3500ms 1500ms ease-in-out infinite;
+  animation: fly 3500ms 3500ms ease-in-out infinite;
 }
 
 .roundElement:nth-child(5) {
   top: calc(58% - var(--width-large) / 2);
   left: calc(68% - var(--width-large) / 2);
 
-  animation: fly 3500ms 2000ms ease-in-out infinite;
+  animation: fly 3500ms 4000ms ease-in-out infinite;
 }
 
 .roundElement:nth-child(6) {
   top: calc(33% - var(--width-medium) / 2);
   left: calc(83% - var(--width-medium) / 2);
 
-  animation: fly 3500ms 2500ms ease-in-out infinite;
+  animation: fly 3500ms 4500ms ease-in-out infinite;
 }
 
 .roundElement:nth-child(7) {
   top: 0;
   right: 0;
 
-  animation: fly 3500ms 3000ms ease-in-out infinite;
+  animation: fly 3500ms 5000ms ease-in-out infinite;
 }
 
 @media (width >= 768px) {
@@ -259,6 +259,6 @@
   }
 
   50% {
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
 }
