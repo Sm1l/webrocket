@@ -40,8 +40,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({ submitModalIsVisible, clo
     };
   }, [submitModalIsVisible]);
 
-  //*close modal 5 sec
-
+  //*close modal 10 sec
   useEffect(() => {
     if (submitModalIsVisible) {
       const timer = setInterval(() => {

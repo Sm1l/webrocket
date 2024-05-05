@@ -38,12 +38,7 @@ const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
         </a>
       </div>
       <div className={styles.imageContainer}>
-        <Image
-          className={styles.backgroundImg}
-          src={welcomeData.image}
-          alt={welcomeData.title}
-          priority
-        />
+        <Image className={styles.backgroundImg} src={welcomeData.image} alt={welcomeData.title} priority />
       </div>
     </div>
   );
