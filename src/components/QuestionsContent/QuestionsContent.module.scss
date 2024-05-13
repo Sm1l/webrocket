@@ -1,7 +1,7 @@
-.concent {
+.questionsContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   justify-content: flex-start;
   align-items: flex-start;
 
@@ -11,12 +11,6 @@
   padding-top: 20px;
 }
 
-.contentContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .title {
   align-self: center;
 
@@ -24,9 +18,7 @@
 }
 
 @media (width >= 768px) {
-  .concent {
-    gap: 40px;
-
+  .questionsContent {
     padding-top: 40px;
   }
 }

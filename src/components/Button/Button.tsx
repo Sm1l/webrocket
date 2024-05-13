@@ -1,4 +1,5 @@
-import React, { ButtonHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes, forwardRef } from "react";
+import { motion } from "framer-motion";
 
 import styles from "./Button.module.scss";
 
@@ -8,9 +9,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   arrow?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, type, arrow, ...props }) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ text, type, arrow, ...props }, ref) => {
   return (
-    <button className={styles.button} type={type} {...props}>
+    <button className={styles.button} ref={ref} type={type} {...props}>
       {text}
       {arrow && (
         <svg className={styles.arrow} width="43" height="15" viewBox="0 0 43 15" fill="none">
@@ -22,6 +23,9 @@ const Button: React.FC<ButtonProps> = ({ text, type, arrow, ...props }) => {
       )}
     </button>
   );
-};
+});
 
+Button.displayName = "Button";
 export { Button };
+
+export const MButton = motion(Button);

@@ -1,11 +1,11 @@
 "use client";
-// import { motion } from "framer-motion";
 
 import React, { useEffect, useState } from "react";
 
 import styles from "./FeedbackModal.module.scss";
 
-import { feedbackModalVariants } from "./feedbackModalVariants";
+import { appearAnimationTop } from "@/assets/animations";
+import { motion } from "framer-motion";
 
 interface FeedbackModalProps {
   submitModalIsVisible: boolean;
@@ -49,7 +49,6 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({ submitModalIsVisible, clo
 
       return () => {
         clearInterval(timer);
-        console.log("clearInterval");
       };
     }
   }, [submitModalIsVisible]);
@@ -62,18 +61,14 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({ submitModalIsVisible, clo
 
   return (
     <div className={styles.overlay} onClick={closeModalHandleClick}>
-      <div
+      <motion.div
         className={styles.container}
         onClick={(e: React.SyntheticEvent<EventTarget>) => e.stopPropagation()}
-        // initial={"hidden"}
-        // animate={"visible"}
-        // exit={"exit"}
-        // key="container"
-        // transition={{
-        //   duration: 0.5,
-        //   type: "spring",
-        // }}
-        // variants={modalVariants}
+        initial="initial"
+        animate="animate"
+        exit="initial"
+        variants={appearAnimationTop}
+        custom={1}
       >
         <div className={styles.top}>
           <p>{countdown} сек.</p>
@@ -83,7 +78,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({ submitModalIsVisible, clo
           <span>Спасибо!</span>
           Ваша заявка принята! В ближайшее время мы обязательно с Вами свяжемся!
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

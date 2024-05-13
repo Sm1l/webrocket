@@ -1,7 +1,7 @@
-.questions {
+.policyContent {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   justify-content: flex-start;
   align-items: flex-start;
 
@@ -17,8 +17,22 @@
   text-align: center;
 }
 
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  margin-left: 36px;
+
+  list-style-type: circle;
+}
+
 @media (width >= 768px) {
-  .questions {
+  .policyContent {
+    gap: 40px;
+
     padding-top: 40px;
   }
 }

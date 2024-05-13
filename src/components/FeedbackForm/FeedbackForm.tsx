@@ -6,9 +6,11 @@ import { saveDataToFirebase } from "@/firebase/saveDataToFirebase";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { Button } from "../Button";
+import { MButton } from "../Button";
 import styles from "./FeedbackForm.module.scss";
 import { FeedbackModal } from "../FeedbackModal";
+import { AnimatePresence, motion } from "framer-motion";
+import { appearAnimationTop } from "@/assets/animations";
 
 export type TForm = {
   name: string;
@@ -33,17 +35,26 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
   } = useForm<TForm>({ mode: "onBlur" });
 
   const onSubmit: SubmitHandler<TForm> = (data) => {
-    reset();
     saveDataToFirebase(data);
     setSubmitModalIsVisible(true);
+    reset();
   };
 
   return (
     <>
       <form className={styles.feedbackForm} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputContainer}>
-          <label htmlFor="name">Имя</label>
-          <input
+          <motion.label
+            htmlFor="name"
+            initial="initial"
+            whileInView="animate"
+            variants={appearAnimationTop}
+            viewport={{ amount: 0.3, once: true }}
+            custom={1}
+          >
+            Имя
+          </motion.label>
+          <motion.input
             className={errors?.name ? `${styles.input} ${styles.inputError}` : styles.input}
             id="name"
             type="text"
@@ -52,12 +63,26 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
               required: "Это поле обязательно",
               minLength: { value: 2, message: "Минимум 2 символа" },
             })}
+            initial="initial"
+            whileInView="animate"
+            variants={appearAnimationTop}
+            viewport={{ amount: 0.3, once: true }}
+            custom={2}
           />
           <div className={styles.error}>{errors?.name && <span>{errors?.name?.message ?? "Ошибка"}</span>}</div>
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="tel">Номер телефона</label>
-          <input
+          <motion.label
+            htmlFor="tel"
+            initial="initial"
+            whileInView="animate"
+            variants={appearAnimationTop}
+            viewport={{ amount: 0.3, once: true }}
+            custom={3}
+          >
+            Номер телефона
+          </motion.label>
+          <motion.input
             className={errors?.tel ? `${styles.input} ${styles.inputError}` : styles.input}
             id="tel"
             type="tel"
@@ -69,12 +94,26 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
                 message: "Введите корректный телефон",
               },
             })}
+            initial="initial"
+            whileInView="animate"
+            variants={appearAnimationTop}
+            viewport={{ amount: 0.3, once: true }}
+            custom={4}
           />
           <div className={styles.error}>{errors?.tel && <span>{errors?.tel?.message ?? "Ошибка"}</span>}</div>
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="email">Электронная почта</label>
-          <input
+          <motion.label
+            htmlFor="email"
+            initial="initial"
+            whileInView="animate"
+            variants={appearAnimationTop}
+            viewport={{ amount: 0.3, once: true }}
+            custom={5}
+          >
+            Электронная почта
+          </motion.label>
+          <motion.input
             className={errors?.email ? `${styles.input} ${styles.inputError}` : styles.input}
             id="email"
             type="email"
@@ -86,14 +125,28 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
                 message: "Введите корректный e-mail",
               },
             })}
+            initial="initial"
+            whileInView="animate"
+            variants={appearAnimationTop}
+            viewport={{ amount: 0.3, once: true }}
+            custom={6}
           />
           <div className={styles.error}>{errors?.email && <span>{errors?.email?.message ?? "Ошибка"}</span>}</div>
         </div>
-        <Button text="Оставить заявку" type="submit" arrow={true} disabled={!isValid} />
+        <MButton
+          text="Оставить заявку"
+          type="submit"
+          arrow={true}
+          disabled={!isValid}
+          variants={appearAnimationTop}
+          custom={7}
+        />
       </form>
-      {submitModalIsVisible && (
-        <FeedbackModal submitModalIsVisible={submitModalIsVisible} closeModalHandleClick={closeModalHandleClick} />
-      )}
+      <AnimatePresence>
+        {submitModalIsVisible && (
+          <FeedbackModal submitModalIsVisible={submitModalIsVisible} closeModalHandleClick={closeModalHandleClick} />
+        )}
+      </AnimatePresence>
     </>
   );
 };

@@ -6,10 +6,12 @@ import { Navigation } from "../Navigation";
 import { Social } from "../Social";
 import { screenSizeMore767 } from "@/helpers/screenSizeMore767";
 import { Logo } from "../Logo";
+import { motion } from "framer-motion";
 
 import styles from "./Header.module.scss";
 import { BurgerButton } from "../BurgerButton";
 import { BurgerMenu } from "../BurgerMenu";
+import { appearAnimation } from "@/assets/animations";
 
 interface HeaderProps {}
 
@@ -30,28 +32,27 @@ const Header: React.FC<HeaderProps> = () => {
     };
   }, []);
   return (
-    <header className={styles.header}>
+    <motion.header
+      className={styles.header}
+      initial="initial"
+      whileInView="animate"
+      variants={appearAnimation}
+      custom={1}
+      viewport={{ amount: 0.2, once: true }}
+    >
       <Container>
         <div className={styles.headerContainer}>
           <Logo />
           {isWideScreen ? (
             <Navigation />
           ) : (
-            <BurgerButton
-              menuIsActive={menuIsActive}
-              setMenuIsActive={setMenuIsActive}
-            />
+            <BurgerButton menuIsActive={menuIsActive} setMenuIsActive={setMenuIsActive} />
           )}
           {isWideScreen && <Social />}
         </div>
       </Container>
-      {!isWideScreen && (
-        <BurgerMenu
-          menuIsActive={menuIsActive}
-          setMenuIsActive={setMenuIsActive}
-        />
-      )}
-    </header>
+      {!isWideScreen && <BurgerMenu menuIsActive={menuIsActive} setMenuIsActive={setMenuIsActive} />}
+    </motion.header>
   );
 };
 

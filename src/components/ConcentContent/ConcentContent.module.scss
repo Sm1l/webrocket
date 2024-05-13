@@ -1,4 +1,4 @@
-.policy {
+.concentContent {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -11,26 +11,20 @@
   padding-top: 20px;
 }
 
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .title {
   align-self: center;
 
   text-align: center;
 }
 
-.textContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.item {
-  margin-left: 36px;
-
-  list-style-type: circle;
-}
-
 @media (width >= 768px) {
-  .policy {
+  .concentContent {
     gap: 40px;
 
     padding-top: 40px;

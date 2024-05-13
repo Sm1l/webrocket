@@ -3,7 +3,7 @@ export const appearAnimation = {
   animate: (custom: number) => ({
     scale: 1,
     opacity: 1,
-    transition: { duration: 0.3, delay: custom * 0.2, type: "spring" },
+    transition: { duration: 0.6, delay: custom * 0.2, type: "spring" },
   }),
 };
 
@@ -27,7 +27,7 @@ export const appearAnimationRight = {
     x: 0,
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.3, delay: custom * 0.2, type: "spring" },
+    transition: { duration: 0.6, delay: custom * 0.2, type: "spring" },
   }),
 };
 

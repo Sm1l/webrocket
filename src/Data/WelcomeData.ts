@@ -34,8 +34,7 @@ export const welcomeData: TWelcomeData[] = [
   {
     id: nanoid(),
     title: "Разработка приложений",
-    description:
-      "Предоставляем широкий спектр услуг, включая создание приложений",
+    description: "Предоставляем широкий спектр услуг, включая создание приложений",
     image: img2,
     bullet: {
       bTitle: "Приложения",

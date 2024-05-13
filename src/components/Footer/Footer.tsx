@@ -4,9 +4,11 @@ import React, { useState, useEffect } from "react";
 import { Container } from "../Container";
 import { Social } from "../Social";
 import { NavigationFooter } from "../NavigationFooter";
+import { motion } from "framer-motion";
 
 import styles from "./Footer.module.scss";
 import { screenSizeMore767 } from "@/helpers/screenSizeMore767";
+import { appearAnimation } from "@/assets/animations";
 
 interface FooterProps {}
 
@@ -28,10 +30,17 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className={styles.footer}>
       <Container>
-        <div className={styles.footerContainer}>
+        <motion.div
+          className={styles.footerContainer}
+          initial="initial"
+          whileInView="animate"
+          variants={appearAnimation}
+          custom={1}
+          viewport={{ amount: 0.2, once: true }}
+        >
           <NavigationFooter />
           {!isWideScreen && <Social />}
-        </div>
+        </motion.div>
       </Container>
     </footer>
   );
