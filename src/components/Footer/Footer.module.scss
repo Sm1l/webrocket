@@ -7,7 +7,7 @@
 .footerContainer {
   display: flex;
   gap: 60px;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
   width: 100%;
@@ -17,8 +17,6 @@
 
 @media (width >= 768px) {
   .footerContainer {
-    justify-content: center;
-
     min-height: 70px;
     padding: 15px 0;
   }

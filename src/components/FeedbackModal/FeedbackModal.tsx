@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./FeedbackModal.module.scss";
 
-import { appearAnimationTop } from "@/assets/animations";
+import { appearAnimationRocket } from "@/assets/animations";
 import { motion } from "framer-motion";
 
 interface FeedbackModalProps {
@@ -67,7 +67,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({ submitModalIsVisible, clo
         initial="initial"
         animate="animate"
         exit="initial"
-        variants={appearAnimationTop}
+        variants={appearAnimationRocket}
         custom={1}
       >
         <div className={styles.top}>

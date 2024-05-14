@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = () => {
           custom={1}
           viewport={{ amount: 0.2, once: true }}
         >
-          <NavigationFooter />
+          {isWideScreen && <NavigationFooter />}
           {!isWideScreen && <Social />}
         </motion.div>
       </Container>
