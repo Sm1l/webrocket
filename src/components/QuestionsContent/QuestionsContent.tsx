@@ -1,5 +1,5 @@
 "use client";
-import { appearAnimationRight, appearAnimationRocket } from "@/assets/animations";
+import { appearAnimationRight, appearAnimationRocket, appearAnimationTop } from "@/assets/animations";
 import { MSingleQuestion } from "@/components/SingleQuestion";
 import { questionsData } from "@/Data/QuestionsData";
 import { motion } from "framer-motion";
@@ -21,7 +21,7 @@ const QuestionsContent: React.FC<QuestionsContentProps> = () => {
         Вопросы
       </motion.h2>
       {questionsData.map((question, index) => (
-        <MSingleQuestion key={question.id} question={question} variants={appearAnimationRocket} custom={index + 2} />
+        <MSingleQuestion key={question.id} question={question} variants={appearAnimationTop} custom={index + 2} />
       ))}
     </motion.div>
   );
