@@ -12,5 +12,11 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  min-width: 40%;
+  min-width: 80%;
+}
+
+@media (width >= 768px) {
+  .adminForm {
+    min-width: 40%;
+  }
 }

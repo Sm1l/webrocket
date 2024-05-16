@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./page.module.scss";
+import { Button } from "@/components/Button";
 
 export default function NotFound() {
   return (
