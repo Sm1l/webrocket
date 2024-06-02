@@ -12,6 +12,8 @@ export const saveDataToFirebase = async (data: TForm): Promise<void> => {
         name: data.name,
         tel: data.tel,
         email: data.email,
+        id: nanoid(),
+        date: Date.now(),
       },
     };
 

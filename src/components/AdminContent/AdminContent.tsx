@@ -7,6 +7,8 @@ import { loginWithFirebase } from "@/firebase/loginWithFirebase";
 import { Button } from "../Button";
 import { InputContainer } from "../InputContainer";
 import styles from "./AdminContent.module.scss";
+import { AdminLoginFalse } from "../AdminLoginFalse";
+import { AdminPanel } from "../AdminPanel";
 
 export type TAdminForm = {
   email: string;
@@ -17,7 +19,7 @@ interface AdminContentProps {}
 
 const AdminContent: React.FC<AdminContentProps> = () => {
   const [isAdmin, setIsAdmin] = useState<boolean | undefined>(undefined);
-  const [adminEmail, setAdminEmail] = useState<string>("");
+  const [adminId, setAdminId] = useState<string>("");
 
   const {
     register,
@@ -27,17 +29,8 @@ const AdminContent: React.FC<AdminContentProps> = () => {
   } = useForm<TAdminForm>({ mode: "onBlur" });
 
   const onSubmit: SubmitHandler<TAdminForm> = (data) => {
-    loginWithFirebase(data.email, data.password, setIsAdmin);
-    setAdminEmail(data.email);
+    loginWithFirebase(data.email, data.password, setIsAdmin, setAdminId);
     reset();
-  };
-
-  const returnName = (email: string) => {
-    if (email === "konstantin2k@bk.ru") {
-      return "Костя";
-    } else if (email === "nickstepanovdev@gmail.com") {
-      return "Никита";
-    }
   };
 
   return (
@@ -73,19 +66,8 @@ const AdminContent: React.FC<AdminContentProps> = () => {
           <Button type="submit" text="Войти" arrow={true} disabled={!isValid} />
         </form>
       )}
-      {isAdmin === true && (
-        <p className={styles.adminText}>Привет, {returnName(adminEmail)}! Посмотри кто тебе сегодня написал.</p>
-      )}
-      {isAdmin === false && (
-        <div className={styles.containerTryAgain}>
-          <p className={styles.adminForm}>
-            Ошибка аутентификации. &thinsp;
-            <Button type="button" text="Попробуйте ещё раз" onClick={() => setIsAdmin(undefined)}>
-              Попробуйте снова.
-            </Button>
-          </p>
-        </div>
-      )}
+      {isAdmin === true && <AdminPanel adminId={adminId} />}
+      {isAdmin === false && <AdminLoginFalse setIsAdmin={setIsAdmin} />}
     </div>
   );
 };

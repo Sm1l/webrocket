@@ -1,0 +1,32 @@
+.adminPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.adminFeedbacks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.adminFeedback {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 2px solid var(--color-violet);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.elementContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
