@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 import { AdminContent } from "@/components/AdminContent";
 
 export const metadata: Metadata = {
-  title: "ВЕБ рокет | Админ",
+  title: "Веброкет | Админ",
 };
 
 export default function Admin() {

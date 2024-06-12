@@ -1,8 +1,9 @@
 import { nanoid } from "nanoid";
 import { StaticImageData } from "next/image";
-import img1 from "../../public/images/projects_image1.jpg";
-import img2 from "../../public/images/projects_image2.jpg";
-import img3 from "../../public/images/projects_image3.jpg";
+import listsImg from "../../public/images/lists.webp";
+import lofiImg from "../../public/images/projects_image1.jpg";
+import portfolioImg from "../../public/images/portfolio.webp";
+import captureImg from "../../public/images/capture.webp";
 
 export type TProjectData = {
   id: string;
@@ -15,44 +16,30 @@ export type TProjectData = {
 export const projectsData: TProjectData[] = [
   {
     id: nanoid(),
-    image: img1,
+    image: listsImg,
+    title: "Life-to-List",
+    href: "https://life-to-list.vercel.app/",
+    features: ["Web Application", "UI/UX", "Design"],
+  },
+  {
+    id: nanoid(),
+    image: lofiImg,
     title: "Библиотека Lo-Fi музыки",
     href: "https://lioger.github.io/waves/",
-    features: ["UI/UX", "Landing Page", "Design"],
+    features: ["Web Application", "UI/UX", "Design"],
   },
   {
     id: nanoid(),
-    image: img2,
-    title: "Nikita Stepanov",
-    href: "https://nikitastepanov.vercel.app/",
-    features: ["Landing Page", "Design"],
-  },
-  {
-    id: nanoid(),
-    image: img3,
+    image: captureImg,
     title: "Capture",
     href: "https://lioger.github.io/capture/",
-    features: ["UI/UX", "Landing Page", "Design"],
+    features: ["Landing Page", "UI/UX", "Design"],
   },
   {
     id: nanoid(),
-    image: img1,
-    title: "Библиотека Lo-Fi музыки",
-    href: "https://lioger.github.io/waves/",
-    features: ["UI/UX", "Landing Page", "Design"],
-  },
-  {
-    id: nanoid(),
-    image: img2,
+    image: portfolioImg,
     title: "Nikita Stepanov",
     href: "https://nikitastepanov.vercel.app/",
-    features: ["Landing Page", "Design"],
-  },
-  {
-    id: nanoid(),
-    image: img3,
-    title: "Capture",
-    href: "https://lioger.github.io/capture/",
-    features: ["UI/UX", "Landing Page", "Design"],
+    features: ["Landing Page", "UI/UX", "Design"],
   },
 ];

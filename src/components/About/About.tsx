@@ -36,7 +36,7 @@ const About: React.FC<AboutProps> = () => {
           viewport={{ amount: 0.2, once: true }}
         >
           <motion.h3 variants={appearAnimationRight} custom={1}>
-            Направления работы
+            Наш стек технологий
           </motion.h3>
           <motion.div
             className={styles.roundElementContainer}
@@ -44,12 +44,12 @@ const About: React.FC<AboutProps> = () => {
             whileInView="animate"
             viewport={{ amount: 0.2, once: true }}
           >
-            <MRoundElement text="Figma" size="s" variants={appearAnimationTop} custom={1} />
-            <MRoundElement text="Next.js" size="m" variants={appearAnimationTop} custom={2} />
-            <MRoundElement text="Node.js" size="l" variants={appearAnimationTop} custom={3} />
-            <MRoundElement text="TypeScript" size="xl" variants={appearAnimationTop} custom={4} />
-            <MRoundElement text="React.js" size="l" variants={appearAnimationTop} custom={5} />
-            <MRoundElement text="UX/UI" size="m" variants={appearAnimationTop} custom={6} />
+            <MRoundElement text="Node.js" size="s" variants={appearAnimationTop} custom={1} />
+            <MRoundElement text="Figma" size="m" variants={appearAnimationTop} custom={2} />
+            <MRoundElement text="Next.js" size="l" variants={appearAnimationTop} custom={3} />
+            <MRoundElement text="React.js" size="xl" variants={appearAnimationTop} custom={4} />
+            <MRoundElement text="TypeScript" size="l" variants={appearAnimationTop} custom={5} />
+            <MRoundElement text="Adobe XD" size="m" variants={appearAnimationTop} custom={6} />
             <MRoundElement text="Java" size="s" variants={appearAnimationTop} custom={7} />
           </motion.div>
         </motion.div>

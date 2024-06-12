@@ -31,8 +31,8 @@ const PolicyContent: React.FC<PolicyContentProps> = () => {
         </motion.h3>
         <motion.p variants={appearAnimationTop} custom={2}>
           1.1. Политика в отношении обработки персональных данных (далее — Политика) направлена на защиту прав и свобод
-          физических лиц, персональные данные которых обрабатывает Общество с ограниченной ответственностью «Туристская
-          фирма «Машук» г. Пятигорск (далее — Оператор).
+          физических лиц, персональные данные которых обрабатывает Общество с ограниченной ответственностью «Веброкет»
+          г. Усть-Лабинск (далее — Оператор).
         </motion.p>
         <motion.p variants={appearAnimationTop} custom={3}>
           1.2. Политика разработана в соответствии с п. 2 ч. 1 ст. 18.1 Федерального закона от 27 июля 2006 г. № 152-ФЗ
@@ -53,8 +53,8 @@ const PolicyContent: React.FC<PolicyContentProps> = () => {
           2. Сведения об операторе
         </motion.h3>
         <motion.p variants={appearAnimationTop} custom={2}>
-          2.1. Оператор ведет свою деятельность по адресу Ставропольский край, г. Пятигорск, ул. Акопянца, д. 14, пом.
-          3.
+          2.1. Оператор ведет свою деятельность по адресу Краснодарский край, г. Усть-Лабинск, ул. Октябрьская, д. 68,
+          кв. 50.
         </motion.p>
       </motion.div>
       <motion.div
@@ -106,8 +106,7 @@ const PolicyContent: React.FC<PolicyContentProps> = () => {
         <motion.p variants={appearAnimationTop} custom={4}>
           4.3. Оператор обрабатывает персональные данные клиентов с их согласия, предоставляемого клиентами и/или их
           законными представителями путем совершения конклюдентных действий на настоящем интернет-сайте, в том числе, но
-          не ограничиваясь, оформлением заказа, регистрацией в личном кабинете, подпиской на рассылку, в соответствии с
-          настоящей Политикой.
+          не ограничиваясь, оформлением заявки на обратную связь, в соответствии с настоящей Политикой.
         </motion.p>
         <motion.p variants={appearAnimationTop} custom={5}>
           4.4. Оператор обрабатывает персональные данные клиентов не дольше, чем того требуют цели обработки
@@ -120,15 +119,6 @@ const PolicyContent: React.FC<PolicyContentProps> = () => {
           <motion.li className={styles.item} variants={appearAnimationTop} custom={7}>
             фамилия, имя, отчество;
           </motion.li>
-          <motion.li className={styles.item} variants={appearAnimationTop} custom={8}>
-            дата и место рождения;
-          </motion.li>
-          <motion.li className={styles.item} variants={appearAnimationTop} custom={9}>
-            паспортные данные;
-          </motion.li>
-          <motion.li className={styles.item} variants={appearAnimationTop} custom={10}>
-            данные свидетельства о рождении;
-          </motion.li>
           <motion.li className={styles.item} variants={appearAnimationTop} custom={11}>
             номер контактного телефона;
           </motion.li>
@@ -137,7 +127,7 @@ const PolicyContent: React.FC<PolicyContentProps> = () => {
           </motion.li>
         </ul>
         <motion.p variants={appearAnimationTop} custom={13}>
-          Персональые данные, которые автоматически передаются в процессе посещения страниц сайта:
+          Персональные данные, которые автоматически передаются в процессе посещения страниц сайта:
         </motion.p>
         <ul>
           <motion.li className={styles.item} variants={appearAnimationTop} custom={14}>
@@ -205,7 +195,7 @@ const PolicyContent: React.FC<PolicyContentProps> = () => {
             персональных данных»;
           </motion.li>
           <motion.li className={styles.item} variants={appearAnimationTop} custom={10}>
-            роизводит определение угроз безопасности персональных данных при их обработке в информационной системе
+            производит определение угроз безопасности персональных данных при их обработке в информационной системе
             Оператора;
           </motion.li>
           <motion.li className={styles.item} variants={appearAnimationTop} custom={11}>

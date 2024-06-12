@@ -21,7 +21,7 @@ const Contacts: React.FC<ContactsProps> = () => {
       </motion.h2>
       <div className={styles.contactsContainer}>
         <motion.h3 variants={appearAnimationTop} custom={2}>
-          ООО &quot;ВебРокет&quot;
+          ООО &quot;Веброкет&quot;
         </motion.h3>
         <motion.a className={styles.link} href="tel:+79964165496" variants={appearAnimationTop} custom={3}>
           <h3>+7 (996) 416-54-96</h3>

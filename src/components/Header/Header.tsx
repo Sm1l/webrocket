@@ -48,7 +48,8 @@ const Header: React.FC<HeaderProps> = () => {
           ) : (
             <BurgerButton menuIsActive={menuIsActive} setMenuIsActive={setMenuIsActive} />
           )}
-          {isWideScreen && <Social />}
+          {/* {isWideScreen && <Social />} */}
+          {isWideScreen && <div />}
         </div>
       </Container>
       {!isWideScreen && <BurgerMenu menuIsActive={menuIsActive} setMenuIsActive={setMenuIsActive} />}

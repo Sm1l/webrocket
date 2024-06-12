@@ -31,11 +31,11 @@ const gilroy = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mySite.com"), //!изменить
-  title: "ВЕБ рокет",
+  title: "Веброкет",
   description: "Разработка сайтов, Outsourse, Outstaff",
   keywords: "разработка сайтов, купить сайт, outsourse, outstaff", //!
   openGraph: {
-    title: "ВЕБ рокет",
+    title: "Веброкет",
     description: "Разработка сайтов, Outsourse, Outstaff",
     url: "https://mySite.com", //!изменить
     images: "/og-image.jpg", //!изменить
