@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 import { ConcentContent } from "@/components/ConcentContent";
 
 export const metadata: Metadata = {
-  title: "ВЕБ рокет | Согласие",
+  title: "Веброкет | Согласие",
 };
 
 export default function Concent() {

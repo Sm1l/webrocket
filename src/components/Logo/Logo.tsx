@@ -10,9 +10,9 @@ interface LogoProps {}
 const Logo: React.FC<LogoProps> = () => {
   return (
     <div className={styles.logo}>
-      <h1 className={styles.logoTitle}>ВЭБ рокет</h1>
+      <h1 className={styles.logoTitle}>Веброкет</h1>
       <Link href="/">
-        <Image className={styles.logoImg} src={logo} alt="ВЕБ рокет" priority />
+        <Image className={styles.logoImg} src={logo} alt="Веброкет" priority />
       </Link>
     </div>
   );

@@ -98,7 +98,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
         <div className={styles.contactsContainer}>
           <h3>Контакты</h3>
           <div className={styles.contacts}>
-            <p>ООО &quot;ВебРокет&quot;</p>
+            <p>ООО &quot;Веброкет&quot;</p>
             <a className={styles.link} href="tel:+79964165496">
               <p>+7 (996) 416-54-96</p>
             </a>

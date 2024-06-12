@@ -43,7 +43,7 @@ const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
         watchSlidesProgress={true}
         modules={[FreeMode, Thumbs]}
         breakpoints={{
-          768: { slidesPerView: 4 },
+          240: { slidesPerView: 2 },
         }}
         className="welcomeButtonsSlider"
       >
