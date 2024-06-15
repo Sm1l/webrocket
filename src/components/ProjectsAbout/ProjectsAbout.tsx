@@ -14,6 +14,7 @@ const ProjectsAbout: React.FC<ProjectsAboutProps> = ({ projectData }) => {
         <a className={styles.link} href={projectData.href} target="_blank">
           <h3>{projectData.title}</h3>
         </a>
+        <p>{projectData.description}</p>
       </div>
       <div className={styles.featuresContainer}>
         {projectData.features.map((feature) => (

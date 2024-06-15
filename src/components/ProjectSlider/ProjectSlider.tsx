@@ -17,7 +17,6 @@ import { ProjectsAbout } from "../ProjectsAbout";
 
 interface ProjectSliderProps {}
 
-// const ProjectSlider: React.FC<ProjectSliderProps> = forwardRef((_, ref) => {
 const ProjectSlider = forwardRef<HTMLDivElement, ProjectSliderProps>((_, ref) => {
   return (
     <div className={styles.projectSlider} ref={ref}>

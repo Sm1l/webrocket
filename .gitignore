@@ -38,3 +38,6 @@ next-env.d.ts
 # templates
 templates
 generate-react-cli.json
+
+#dev
+/src/components/FeedbackModal

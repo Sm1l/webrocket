@@ -1,10 +1,11 @@
 .feedback {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   justify-content: center;
   align-items: center;
 
+  height: auto;
+  min-height: auto;
   padding: 30px 40px;
 
   text-align: center;
@@ -12,12 +13,24 @@
   border-radius: 60px;
 
   box-shadow: var(--shadow-bottom);
+
+  overflow: hidden;
+}
+
+.feedbackStart {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (width >= 768px) {
   .feedback {
-    gap: 40px;
-
     padding: 40px 80px;
+  }
+
+  .feedbackStart {
+    gap: 40px;
   }
 }

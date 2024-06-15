@@ -6,13 +6,11 @@
 
 @media (width >= 768px) {
   .swiper-button-prev {
-    background: url("../../../public/images/arrow_left.svg") no-repeat
-      center/contain;
+    background: url("../../../public/images/arrow_left.svg") no-repeat center/contain;
   }
 
   .swiper-button-next {
-    background: url("../../../public/images/arrow_right.svg") no-repeat
-      center/contain;
+    background: url("../../../public/images/arrow_right.svg") no-repeat center/contain;
   }
 
   .projectSwiper .swiper-button-next,
@@ -45,8 +43,7 @@
 
   // *slider blur
   .projectSwiper .swiper-slide-active {
-    box-shadow: -80px -34px 20px -51px rgba(211, 167, 255, 0.3),
-      80px -34px 20px -51px rgba(211, 167, 255, 0.3);
+    box-shadow: -100px -60px 200px -110px rgba(211, 167, 255, 0.3), 100px -60px 200px -110px rgba(211, 167, 255, 0.3);
   }
 
   .projectSwiper .swiper-slide-prev,

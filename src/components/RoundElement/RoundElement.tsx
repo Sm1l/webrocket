@@ -47,7 +47,7 @@ const RoundElement = forwardRef<HTMLDivElement, RoundElementProps>(({ text, size
   return (
     <div className={`${styles.roundElement} ${roundSize(size)}`} {...props} ref={ref}>
       <button className={styles.roundElementButton} onClick={handleButtonClick}>
-        <span>{text}</span>
+        <span className={styles.text}>{text}</span>
         <span className={styles.shadowLeft}></span>
         <span className={styles.shadowRight}></span>
       </button>
