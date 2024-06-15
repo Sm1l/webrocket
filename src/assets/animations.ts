@@ -7,16 +7,6 @@ export const appearAnimation = {
   }),
 };
 
-// export const appearAnimationRocket = {
-//   initial: { x: 3000, rotateX: 45, scale: 0.5 },
-//   animate: (custom: number) => ({
-//     rotateX: [45, 45, 45, 45, 45, 0],
-//     x: [3000, 0, 0, 0, 0, 0],
-//     scale: [0.5, 0.5, 0.5, 0.5, 0.5, 1],
-//     transition: { duration: 1.6, delay: custom * 0.2, ease: "linear" },
-//   }),
-// };
-
 export const appearAnimationTop = {
   initial: { y: -200, opacity: 0, scale: 0 },
   animate: (custom: number) => ({
