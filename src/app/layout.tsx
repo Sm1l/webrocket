@@ -30,15 +30,15 @@ const gilroy = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mySite.com"), //!изменить
+  metadataBase: new URL("https://web-rocket.vercel.app"), //!изменить
   title: "Веброкет",
   description: "Разработка сайтов, Outsourse, Outstaff",
   keywords: "разработка сайтов, купить сайт, outsourse, outstaff", //!
   openGraph: {
     title: "Веброкет",
     description: "Разработка сайтов, Outsourse, Outstaff",
-    url: "https://mySite.com", //!изменить
-    images: "/og-image.jpg", //!изменить
+    url: "https://web-rocket.vercel.app", //!изменить
+    images: "https://web-rocket.vercel.app/images/logo.webp", //!изменить
   },
   //!добавить метаданные
 };
@@ -51,29 +51,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="./favicon/apple-touch-icon.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="./favicon/favicon-32x32.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="./favicon/favicon-16x16.png"
-        ></link>
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png"></link>
         <link rel="manifest" href="./favicon/site.webmanifest"></link>
-        <link
-          rel="mask-icon"
-          href="./favicon/safari-pinned-tab.svg"
-          color="#b061ff"
-        ></link>
+        <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#b061ff"></link>
         <meta name="msapplication-TileColor" content="#d3a7ff"></meta>
         <meta name="theme-color" content="#d3a7ff"></meta>
       </head>

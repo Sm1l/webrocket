@@ -19,7 +19,7 @@
 .adminFeedback {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 10px;
   justify-content: flex-start;
   align-items: flex-start;
 
@@ -33,5 +33,9 @@
 .elementContainer {
   display: flex;
   flex-direction: row;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-start;
+
+  text-align: start;
 }

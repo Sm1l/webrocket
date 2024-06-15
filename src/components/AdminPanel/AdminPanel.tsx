@@ -46,21 +46,27 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
       {loading ? (
         <p>Загрузка...</p>
       ) : (
-        <div className={styles.adminFeedbacks}>
-          {feedbacks?.map((feedback) => (
-            <div key={feedback.id} className={styles.adminFeedback}>
-              <p>{`Имя: ${feedback.name}`}</p>
-              <p>{`Дата: ${new Date(feedback.date).toLocaleString("ru-RU")}`}</p>
-              <div className={styles.elementContainer}>
-                <p>Телефон: </p>
-                <a href={`tel:${feedback.tel}`}>{feedback.tel}</a>
-              </div>
-              <div className={styles.elementContainer}>
-                <p>Электронная почта: </p>
-                <a href={`mailto:${feedback.email}`}>{feedback.email}</a>
-              </div>
+        <div>
+          {feedbacks?.length === 0 ? (
+            <p>Пока никто не написал</p>
+          ) : (
+            <div className={styles.adminFeedbacks}>
+              {feedbacks?.map((feedback) => (
+                <div key={feedback.id} className={styles.adminFeedback}>
+                  <p>{`Имя: ${feedback.name}`}</p>
+                  <p>{`Дата: ${new Date(feedback.date).toLocaleString("ru-RU")}`}</p>
+                  <div className={styles.elementContainer}>
+                    <p>Телефон: </p>
+                    <a href={`tel:${feedback.tel}`}>{feedback.tel}</a>
+                  </div>
+                  <div className={styles.elementContainer}>
+                    <p>Электронная почта: </p>
+                    <a href={`mailto:${feedback.email}`}>{feedback.email}</a>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          )}{" "}
         </div>
       )}
     </div>
