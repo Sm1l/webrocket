@@ -48,7 +48,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
       ) : (
         <div>
           {feedbacks?.length === 0 ? (
-            <p>Пока никто не написал</p>
+            <p>Пока никто не написал!</p>
           ) : (
             <div className={styles.adminFeedbacks}>
               {feedbacks?.map((feedback) => (
