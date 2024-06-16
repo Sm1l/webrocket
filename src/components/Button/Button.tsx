@@ -7,11 +7,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   type: "submit" | "button";
   text: string;
   arrow?: boolean;
+  active?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ text, type, arrow, ...props }, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ text, type, arrow, active, ...props }, ref) => {
   return (
-    <button className={styles.button} ref={ref} type={type} {...props}>
+    <button
+      className={active === true ? `${styles.button} ${styles.buttonActive}` : styles.button}
+      ref={ref}
+      type={type}
+      {...props}
+    >
       {text}
       {arrow && (
         <svg className={styles.arrow} width="43" height="15" viewBox="0 0 43 15" fill="none">

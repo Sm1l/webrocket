@@ -2,7 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { TForm } from "../components/FeedbackForm";
 import { db } from "./firebase";
 
-export type TFirebaseData = TForm & { id: string; date: number };
+export type TFirebaseData = TForm & { id: string; date: number; active: boolean };
 
 export const getDataFromFirebase = async (): Promise<TFirebaseData[] | null> => {
   try {
@@ -12,7 +12,6 @@ export const getDataFromFirebase = async (): Promise<TFirebaseData[] | null> => 
     if (docSnap.exists()) {
       const data = docSnap.data();
       const feedbacks = Object.values(data) as TFirebaseData[];
-      console.log("Данные успешно получены", feedbacks);
       return feedbacks;
     } else {
       console.log("Документ не найден");
