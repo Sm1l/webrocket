@@ -1,6 +1,5 @@
 .adminFeedback {
   display: flex;
-  flex-direction: row;
   gap: 10px;
   justify-content: space-between;
   align-items: flex-start;
@@ -40,7 +39,6 @@
 
 .elementContainer {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 4px;
   justify-content: flex-start;

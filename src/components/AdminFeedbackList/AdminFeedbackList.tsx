@@ -4,9 +4,11 @@ import { useFeedbackStore } from "@/store/feedbackStore";
 import { AdminFeedback } from "../AdminFeedback/AdminFeedback";
 import styles from "./AdminFeedbackList.module.scss";
 
-interface AdminFeedbackListProps {}
+interface AdminFeedbackListProps {
+  setStoreIsChanged: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const AdminFeedbackList: React.FC<AdminFeedbackListProps> = () => {
+const AdminFeedbackList: React.FC<AdminFeedbackListProps> = ({ setStoreIsChanged }) => {
   const feedbacks = useFeedbackStore((state) => state.feedbacks);
 
   return (
@@ -16,7 +18,7 @@ const AdminFeedbackList: React.FC<AdminFeedbackListProps> = () => {
       ) : (
         <div className={styles.adminFeedbacks}>
           {feedbacks?.map((feedback) => (
-            <AdminFeedback key={feedback.id} feedback={feedback} />
+            <AdminFeedback key={feedback.id} feedback={feedback} setStoreIsChanged={setStoreIsChanged} />
           ))}
         </div>
       )}

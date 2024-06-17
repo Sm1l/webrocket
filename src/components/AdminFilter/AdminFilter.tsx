@@ -6,12 +6,16 @@ import { Button } from "../Button";
 import { sortFeedbacks } from "@/store/feedbackStore";
 
 interface AdminFilterProps {
-  dataReceivedByStore: boolean;
+  storeIsChanged: boolean;
 }
 
-const AdminFilter: React.FC<AdminFilterProps> = ({ dataReceivedByStore }) => {
+const AdminFilter: React.FC<AdminFilterProps> = ({ storeIsChanged }) => {
   const [sortByDate, setSortByDate] = useState<"newest" | "oldest">("newest");
   const [sortByActive, setSortByActive] = useState<"activeFirst" | "inactiveFirst">("activeFirst");
+
+  useEffect(() => {
+    sortFeedbacks(sortByDate, sortByActive);
+  }, [sortByDate, sortByActive, storeIsChanged]);
 
   const sortFeedbacksNewestFirstHandleClick = () => {
     if (sortByDate === "oldest") {
@@ -31,14 +35,9 @@ const AdminFilter: React.FC<AdminFilterProps> = ({ dataReceivedByStore }) => {
     }
   };
 
-  useEffect(() => {
-    sortFeedbacks(sortByDate, sortByActive);
-  }, [sortByDate, sortByActive, dataReceivedByStore]);
-
   const sortFeedbacksInactiveFirstHandleClick = () => {
     if (sortByActive === "activeFirst") {
       setSortByActive("inactiveFirst");
-      sortFeedbacks(sortByDate, sortByActive);
     }
   };
 

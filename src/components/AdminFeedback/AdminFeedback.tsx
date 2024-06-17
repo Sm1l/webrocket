@@ -4,25 +4,24 @@ import React from "react";
 import styles from "./AdminFeedback.module.scss";
 import { TFirebaseData } from "@/firebase/getDataFromFirebase";
 import { Button } from "../Button";
-import { dataIsChangedInFirebaseToggle } from "@/store/dataIsChangedStore";
 import { toggleActiveStatus } from "@/firebase/toggleActiveStatus";
+import { toggleActiveStatusInState } from "@/store/feedbackStore";
 
 interface AdminFeedbackProps {
   feedback: TFirebaseData;
+  setStoreIsChanged: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback }) => {
-  const urgentFeedbacks = (date: number) => {
+const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback, setStoreIsChanged }) => {
+  const TIME_TO_URGENT = 172800000;
+  const IsUrgentDate = (date: number) => {
     const dateNow = Date.now();
-    const urgentDate = date + 172800000; //*2 days
-    if (urgentDate < dateNow) {
-      return true;
-    }
-    return false;
+    const urgentDate = date + TIME_TO_URGENT;
+    return urgentDate < dateNow;
   };
 
-  const feedbackClass = (date: number, active: boolean) => {
-    if (urgentFeedbacks(date) && active) {
+  const getFeedbackClass = (date: number, active: boolean) => {
+    if (IsUrgentDate(date) && active) {
       return `${styles.adminFeedback} ${styles.adminFeedbackUrgently}`;
     } else if (!active) {
       return `${styles.adminFeedback} ${styles.adminFeedbackClosed}`;
@@ -32,12 +31,13 @@ const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback }) => {
 
   const markFeedbackInactive = () => {
     toggleActiveStatus(feedback.id).then(() => {
-      dataIsChangedInFirebaseToggle();
+      toggleActiveStatusInState(feedback.id);
+      setStoreIsChanged((state) => !state);
     });
   };
 
   return (
-    <div key={feedback.id} className={feedbackClass(feedback.date, feedback.active)}>
+    <div key={feedback.id} className={getFeedbackClass(feedback.date, feedback.active)}>
       <div className={styles.feedbackData}>
         <p>{`Имя: ${feedback.name}`}</p>
         <p>{`Дата: ${new Date(feedback.date).toLocaleString("ru-RU")}`}</p>

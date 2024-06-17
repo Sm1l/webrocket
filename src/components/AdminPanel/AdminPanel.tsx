@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 
 import styles from "./AdminPanel.module.scss";
@@ -5,15 +6,13 @@ import { getDataFromFirebase } from "@/firebase/getDataFromFirebase";
 import { getFeedbacksFromFirebase } from "@/store/feedbackStore";
 import { AdminFilter } from "../AdminFilter";
 import { AdminFeedbackList } from "../AdminFeedbackList";
-import { useDataIsChangedStore } from "@/store/dataIsChangedStore";
 interface AdminPanelProps {
   adminId: string;
 }
 
 const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
-  const [dataReceivedByStore, setDataReceivedByStore] = useState<boolean>(true);
+  const [storeIsChanged, setStoreIsChanged] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true);
-  const dataIsChangedInFirebase = useDataIsChangedStore((state) => state.dataIsChangedInFirebase);
   const returnName = (adminId: string) => {
     if (adminId === "Yeu5qZnTbIWyRuzZigK8BmgVDSt2") {
       return "Костя";
@@ -40,9 +39,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
 
   useEffect(() => {
     fetchFeedbacks().then(() => {
-      setDataReceivedByStore((state) => !state);
+      setStoreIsChanged((state) => !state);
     });
-  }, [dataIsChangedInFirebase]);
+  }, []);
 
   return (
     <div className={styles.adminPanel}>
@@ -52,8 +51,8 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
         <p>Загрузка...</p>
       ) : (
         <div className={styles.adminContainer}>
-          <AdminFilter dataReceivedByStore={dataReceivedByStore} />
-          <AdminFeedbackList />
+          <AdminFilter storeIsChanged={storeIsChanged} />
+          <AdminFeedbackList setStoreIsChanged={setStoreIsChanged} />
         </div>
       )}
     </div>

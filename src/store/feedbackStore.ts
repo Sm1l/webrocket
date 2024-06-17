@@ -16,6 +16,22 @@ export const getFeedbacksFromFirebase = (feedbacks: TFirebaseData[]) => {
   useFeedbackStore.setState({ feedbacks: feedbacks });
 };
 
+export const toggleActiveStatusInState = (id: string) => {
+  const currentFeedbacks = useFeedbackStore.getState().feedbacks;
+  const index = currentFeedbacks.findIndex((feedback) => feedback.id === id);
+
+  if (index !== -1) {
+    const newFeedbacks = currentFeedbacks.map((feedback, i) => {
+      if (i === index) {
+        return { ...feedback, active: !feedback.active };
+      }
+      return feedback;
+    });
+
+    useFeedbackStore.setState({ feedbacks: newFeedbacks });
+  }
+};
+
 export const sortFeedbacks = (dateOrder: "newest" | "oldest", activeOrder: "activeFirst" | "inactiveFirst") => {
   useFeedbackStore.setState((prev) => {
     let sortedFeedbacks = [...prev.feedbacks];
