@@ -1,15 +1,13 @@
 import React from "react";
 
 import styles from "./WelcomeBullet.module.scss";
-import { TWelcomeBullet } from "@/Data/WelcomeData";
+import { TWelcomeBullet } from "@/data/welcomeData";
 
 interface WelcomeBulletProps {
   bulletsWelcomeData: TWelcomeBullet;
 }
 
-const WelcomeBullet: React.FC<WelcomeBulletProps> = ({
-  bulletsWelcomeData,
-}) => {
+const WelcomeBullet: React.FC<WelcomeBulletProps> = ({ bulletsWelcomeData }) => {
   return (
     <div className={styles.welcomeBullet}>
       <h3 className={styles.title}>{bulletsWelcomeData.bTitle}</h3>

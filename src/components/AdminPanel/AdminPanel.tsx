@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./AdminPanel.module.scss";
 import { getDataFromFirebase } from "@/firebase/getDataFromFirebase";
-import { getFeedbacksFromFirebase } from "@/store/feedbackStore";
+import { getFeedbacksInStore } from "@/store/feedbackStore";
 import { AdminFilter } from "../AdminFilter";
 import { AdminFeedbackList } from "../AdminFeedbackList";
 interface AdminPanelProps {
@@ -26,9 +26,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
     try {
       const feedbackData = await getDataFromFirebase();
       if (feedbackData) {
-        getFeedbacksFromFirebase(feedbackData);
+        getFeedbacksInStore(feedbackData);
       } else {
-        getFeedbacksFromFirebase([]);
+        getFeedbacksInStore([]);
       }
     } catch (error) {
       console.error("Ошибка при загрузке отзывов:", error);

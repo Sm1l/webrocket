@@ -12,8 +12,14 @@ export const useFeedbackStore = create<typeof initialFeedbackValue>()(
   devtools(() => initialFeedbackValue, { name: "Feedbacks" })
 );
 
-export const getFeedbacksFromFirebase = (feedbacks: TFirebaseData[]) => {
+export const getFeedbacksInStore = (feedbacks: TFirebaseData[]) => {
   useFeedbackStore.setState({ feedbacks: feedbacks });
+};
+
+export const deleteFeedbackFromStore = (id: string) => {
+  useFeedbackStore.setState((prevState) => ({
+    feedbacks: prevState.feedbacks.filter((feedback) => feedback.id !== id),
+  }));
 };
 
 export const toggleActiveStatusInState = (id: string) => {
@@ -23,6 +29,7 @@ export const toggleActiveStatusInState = (id: string) => {
   if (index !== -1) {
     const newFeedbacks = currentFeedbacks.map((feedback, i) => {
       if (i === index) {
+        console.log(`Feedback with id ${id} updated successfully in storage`);
         return { ...feedback, active: !feedback.active };
       }
       return feedback;

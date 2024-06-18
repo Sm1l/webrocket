@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TWelcomeData } from "@/Data/WelcomeData";
+import { TWelcomeData } from "@/data/welcomeData";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "../Button";

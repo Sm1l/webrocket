@@ -2,7 +2,7 @@
 import React, { forwardRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { projectsData } from "@/Data/ProjectsData";
+import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 
 import "swiper/css";

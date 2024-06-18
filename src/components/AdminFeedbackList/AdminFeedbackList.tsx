@@ -14,7 +14,7 @@ const AdminFeedbackList: React.FC<AdminFeedbackListProps> = ({ setStoreIsChanged
   return (
     <div className={styles.adminFeedbackList}>
       {feedbacks?.length === 0 ? (
-        <p>Пока никто не написал!</p>
+        <p className={styles.emptyText}>Пока никто не написал!</p>
       ) : (
         <div className={styles.adminFeedbacks}>
           {feedbacks?.map((feedback) => (
