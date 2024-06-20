@@ -9,15 +9,15 @@ interface AdminFeedbackListProps {
 }
 
 const AdminFeedbackList: React.FC<AdminFeedbackListProps> = ({ setStoreIsChanged }) => {
-  const feedbacks = useFeedbackStore((state) => state.feedbacks);
+  const filteredFeedbacks = useFeedbackStore((state) => state.filteredFeedbacks);
 
   return (
     <div className={styles.adminFeedbackList}>
-      {feedbacks?.length === 0 ? (
+      {filteredFeedbacks?.length === 0 ? (
         <p className={styles.emptyText}>Пока никто не написал!</p>
       ) : (
         <div className={styles.adminFeedbacks}>
-          {feedbacks?.map((feedback) => (
+          {filteredFeedbacks?.map((feedback) => (
             <AdminFeedback key={feedback.id} feedback={feedback} setStoreIsChanged={setStoreIsChanged} />
           ))}
         </div>

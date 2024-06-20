@@ -13,6 +13,7 @@ export const toggleActiveStatusInFirebase = async (feedbackId: string): Promise<
     }
 
     const feedbacksData = docSnapshot.data() as TFirebaseData;
+    console.log("toggle Firebase");
 
     await updateDoc(docRef, {
       active: !feedbacksData.active,
