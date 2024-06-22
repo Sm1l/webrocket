@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import styles from "./AdminFeedback.module.scss";
 import { TFirebaseData } from "@/firebase/getDataFromFirebase";
@@ -7,6 +7,7 @@ import { Button } from "../Button";
 import { toggleActiveStatusInFirebase } from "@/firebase/toggleActiveStatusInFirebase";
 import { deleteFeedbackFromStore, toggleActiveStatusInState } from "@/store/feedbackStore";
 import { deleteFeedbackFromFirebase } from "@/firebase/deleteFeedbackFromFirebase";
+import { DeleteModal } from "../DeleteModal";
 
 interface AdminFeedbackProps {
   feedback: TFirebaseData;
@@ -14,6 +15,7 @@ interface AdminFeedbackProps {
 }
 
 const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback, setStoreIsChanged }) => {
+  const [modalIsVisible, setModalIsVisible] = useState<boolean>(false);
   const TIME_TO_URGENT = 172800000;
   const IsUrgentDate = (date: number) => {
     const dateNow = Date.now();
@@ -40,7 +42,11 @@ const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback, setStoreIsChang
     }
   };
 
-  const deleteFeedbackHandleClick = async () => {
+  const closeModalHandleClick = () => {
+    setModalIsVisible(false);
+  };
+
+  const deleteFeedback = async () => {
     try {
       await deleteFeedbackFromFirebase(feedback.id);
       deleteFeedbackFromStore(feedback.id);
@@ -50,29 +56,39 @@ const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback, setStoreIsChang
   };
 
   return (
-    <div key={feedback.id} className={getFeedbackClass(feedback.date, feedback.active)}>
-      <div className={styles.feedbackData}>
-        <p>{`Имя: ${feedback.name}`}</p>
-        <p>{`Дата: ${new Date(feedback.date).toLocaleString("ru-RU")}`}</p>
-        <div className={styles.elementContainer}>
-          <p>Телефон: </p>
-          <a href={`tel:${feedback.tel}`}>{feedback.tel}</a>
+    <>
+      <div key={feedback.id} className={getFeedbackClass(feedback.date, feedback.active)}>
+        <div className={styles.feedbackData}>
+          <p>{`Имя: ${feedback.name}`}</p>
+          <p>{`Дата: ${new Date(feedback.date).toLocaleString("ru-RU")}`}</p>
+          <div className={styles.elementContainer}>
+            <p>Телефон: </p>
+            <a href={`tel:${feedback.tel}`}>{feedback.tel}</a>
+          </div>
+          <div className={styles.elementContainer}>
+            <p>Электронная почта: </p>
+            <a href={`mailto:${feedback.email}`}>{feedback.email}</a>
+          </div>
         </div>
-        <div className={styles.elementContainer}>
-          <p>Электронная почта: </p>
-          <a href={`mailto:${feedback.email}`}>{feedback.email}</a>
+        <div className={styles.feedbackButtons}>
+          <Button
+            text={!feedback.active ? "Inactive" : "Mark"}
+            type="button"
+            active={!feedback.active}
+            onClick={toggleActiveStatusHandleClick}
+          />
+          {!feedback.active && <Button text="Delete" type="button" onClick={() => setModalIsVisible(true)} />}
         </div>
       </div>
-      <div className={styles.feedbackButtons}>
-        <Button
-          text={!feedback.active ? "Inactive" : "Mark"}
-          type="button"
-          active={!feedback.active}
-          onClick={toggleActiveStatusHandleClick}
+      {modalIsVisible && (
+        <DeleteModal
+          feedbackName={feedback.name}
+          modalIsVisible={modalIsVisible}
+          closeModalHandleClick={closeModalHandleClick}
+          deleteFeedback={deleteFeedback}
         />
-        <Button text="Delete" type="button" onClick={deleteFeedbackHandleClick} />
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
