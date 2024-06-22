@@ -17,15 +17,9 @@ const AdminSort: React.FC<AdminSortProps> = ({ storeIsChanged }) => {
     sortFeedbacks(sortByDate);
   }, [sortByDate, storeIsChanged]);
 
-  const sortFeedbacksNewestFirstHandleClick = () => {
-    if (sortByDate === "oldest") {
-      setSortByDate("newest");
-    }
-  };
-
-  const sortFeedbacksOldestFirstHandleClick = () => {
-    if (sortByDate === "newest") {
-      setSortByDate("oldest");
+  const sortFeedbacksByDateHandleClick = (sortBy: TSortByDate) => {
+    if (sortByDate !== sortBy) {
+      setSortByDate(sortBy);
     }
   };
 
@@ -34,13 +28,13 @@ const AdminSort: React.FC<AdminSortProps> = ({ storeIsChanged }) => {
       <Button
         text="Newest"
         type="button"
-        onClick={sortFeedbacksNewestFirstHandleClick}
+        onClick={() => sortFeedbacksByDateHandleClick("newest")}
         active={sortByDate === "newest"}
       />
       <Button
         text="Oldest"
         type="button"
-        onClick={sortFeedbacksOldestFirstHandleClick}
+        onClick={() => sortFeedbacksByDateHandleClick("oldest")}
         active={sortByDate === "oldest"}
       />
     </div>

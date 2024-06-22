@@ -7,23 +7,15 @@ import { getFeedbacksInStore } from "@/store/feedbackStore";
 import { AdminSort } from "../AdminSort";
 import { AdminFeedbackList } from "../AdminFeedbackList";
 import { AdminFilter } from "../AdminFilter";
+import { ADMINS } from "@/data/admins";
 interface AdminPanelProps {
   adminId: string;
 }
 
 const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
-  const [storeIsChanged, setStoreIsChanged] = useState<boolean>(true);
+  const [storeIsChanged, setStoreIsChanged] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const NIKITA_ID = "ObpSKBjHoAUG1K0MFNr3rlF50Ln1";
-  const KOSTYA_ID = "Yeu5qZnTbIWyRuzZigK8BmgVDSt2";
-  const returnName = (adminId: string) => {
-    if (adminId === KOSTYA_ID) {
-      return "Костя";
-    } else if (adminId === NIKITA_ID) {
-      return "Никита";
-    }
-    return "Админ";
-  };
+  const returnName = (adminId: string) => ADMINS[adminId as keyof typeof ADMINS] ?? "Админ";
 
   const fetchFeedbacks = async () => {
     try {
@@ -41,11 +33,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      await fetchFeedbacks();
-      setStoreIsChanged((state) => !state);
-    };
-    fetchData();
+    fetchFeedbacks();
   }, []);
 
   return (
