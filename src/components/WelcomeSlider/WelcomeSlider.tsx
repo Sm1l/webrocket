@@ -12,7 +12,7 @@ import { Welcome } from "../Welcome/Welcome";
 import { WelcomeBullet } from "../WelcomeBullet";
 import styles from "./WelcomeSlider.module.scss";
 
-import { welcomeData } from "@/Data/WelcomeData";
+import { welcomeData } from "@/data/welcomeData";
 import "./swiper.scss";
 
 interface WelcomeSliderProps {}

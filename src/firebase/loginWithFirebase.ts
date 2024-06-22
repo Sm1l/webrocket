@@ -12,7 +12,6 @@ export const loginWithFirebase: TLoginWithFirebase = async (email, password, set
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-    console.log("Пользователь: ", user);
     setIsAdmin(true);
     setAdminId(user.uid);
   } catch (error) {

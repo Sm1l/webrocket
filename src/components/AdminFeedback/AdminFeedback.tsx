@@ -4,8 +4,9 @@ import React from "react";
 import styles from "./AdminFeedback.module.scss";
 import { TFirebaseData } from "@/firebase/getDataFromFirebase";
 import { Button } from "../Button";
-import { toggleActiveStatus } from "@/firebase/toggleActiveStatus";
-import { toggleActiveStatusInState } from "@/store/feedbackStore";
+import { toggleActiveStatusInFirebase } from "@/firebase/toggleActiveStatusInFirebase";
+import { deleteFeedbackFromStore, toggleActiveStatusInState } from "@/store/feedbackStore";
+import { deleteFeedbackFromFirebase } from "@/firebase/deleteFeedbackFromFirebase";
 
 interface AdminFeedbackProps {
   feedback: TFirebaseData;
@@ -29,11 +30,23 @@ const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback, setStoreIsChang
     return `${styles.adminFeedback} `;
   };
 
-  const markFeedbackInactive = () => {
-    toggleActiveStatus(feedback.id).then(() => {
+  const toggleActiveStatusHandleClick = async () => {
+    try {
+      await toggleActiveStatusInFirebase(feedback.id);
       toggleActiveStatusInState(feedback.id);
       setStoreIsChanged((state) => !state);
-    });
+    } catch (error) {
+      console.error("Failed to update feedback status: ", error);
+    }
+  };
+
+  const deleteFeedbackHandleClick = async () => {
+    try {
+      await deleteFeedbackFromFirebase(feedback.id);
+      deleteFeedbackFromStore(feedback.id);
+    } catch (error) {
+      console.error("Failed to delete feedback: ", error);
+    }
   };
 
   return (
@@ -55,9 +68,9 @@ const AdminFeedback: React.FC<AdminFeedbackProps> = ({ feedback, setStoreIsChang
           text={!feedback.active ? "Inactive" : "Mark"}
           type="button"
           active={!feedback.active}
-          onClick={markFeedbackInactive}
+          onClick={toggleActiveStatusHandleClick}
         />
-        <Button text="Delete" type="button" />
+        <Button text="Delete" type="button" onClick={deleteFeedbackHandleClick} />
       </div>
     </div>
   );

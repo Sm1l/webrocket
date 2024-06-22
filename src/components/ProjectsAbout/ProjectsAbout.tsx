@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./ProjectsAbout.module.scss";
-import { TProjectData } from "@/Data/ProjectsData";
+import { TProjectData } from "@/data/projectsData";
 
 interface ProjectsAboutProps {
   projectData: TProjectData;

@@ -6,18 +6,16 @@ import { TFirebaseData } from "./getDataFromFirebase";
 
 export const saveDataToFirebase = async (data: TForm): Promise<void> => {
   try {
-    const docRef = doc(db, "WebRocket", "feedbacks");
     const newId = nanoid();
+    const docRef = doc(db, "webrocket_feedbacks", newId);
 
-    const feedbackData: Record<string, TFirebaseData> = {
-      [newId]: {
-        name: data.name,
-        tel: data.tel,
-        email: data.email,
-        id: newId,
-        date: Date.now(),
-        active: true,
-      },
+    const feedbackData: TFirebaseData = {
+      name: data.name,
+      tel: data.tel,
+      email: data.email,
+      id: newId,
+      date: Date.now(),
+      active: true,
     };
 
     await setDoc(docRef, feedbackData, { merge: true });

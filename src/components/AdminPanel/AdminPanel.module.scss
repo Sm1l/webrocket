@@ -17,3 +17,20 @@
 
   width: 100%;
 }
+
+.adminContainerFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+@media (width >= 768px) {
+  .adminContainerFilters {
+    flex-direction: row;
+    gap: 30px;
+  }
+}

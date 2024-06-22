@@ -1,7 +1,7 @@
 "use client";
 import { appearAnimationRight, appearAnimationTop } from "@/assets/animations";
 import { MSingleQuestion } from "@/components/SingleQuestion";
-import { questionsData } from "@/Data/QuestionsData";
+import { questionsData } from "@/data/questionsData";
 import { motion } from "framer-motion";
 import React from "react";
 

@@ -1,4 +1,4 @@
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { TForm } from "../components/FeedbackForm";
 import { db } from "./firebase";
 
@@ -6,17 +6,12 @@ export type TFirebaseData = TForm & { id: string; date: number; active: boolean 
 
 export const getDataFromFirebase = async (): Promise<TFirebaseData[] | null> => {
   try {
-    const docRef = doc(db, "WebRocket", "feedbacks");
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-      const feedbacks = Object.values(data) as TFirebaseData[];
-      return feedbacks;
-    } else {
-      console.log("Документ не найден");
-      return null;
-    }
+    const querySnapshot = await getDocs(collection(db, "webrocket_feedbacks"));
+    const feedbacks: TFirebaseData[] = [];
+    querySnapshot.forEach((doc) => {
+      feedbacks.push(doc.data() as TFirebaseData);
+    });
+    return feedbacks;
   } catch (error) {
     console.error("Ошибка при получении данных: ", error);
     return null;

@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./AdminPanel.module.scss";
 import { getDataFromFirebase } from "@/firebase/getDataFromFirebase";
-import { getFeedbacksFromFirebase } from "@/store/feedbackStore";
-import { AdminFilter } from "../AdminFilter";
+import { getFeedbacksInStore } from "@/store/feedbackStore";
+import { AdminSort } from "../AdminSort";
 import { AdminFeedbackList } from "../AdminFeedbackList";
+import { AdminFilter } from "../AdminFilter";
 interface AdminPanelProps {
   adminId: string;
 }
@@ -13,10 +14,12 @@ interface AdminPanelProps {
 const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
   const [storeIsChanged, setStoreIsChanged] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true);
+  const NIKITA_ID = "ObpSKBjHoAUG1K0MFNr3rlF50Ln1";
+  const KOSTYA_ID = "Yeu5qZnTbIWyRuzZigK8BmgVDSt2";
   const returnName = (adminId: string) => {
-    if (adminId === "Yeu5qZnTbIWyRuzZigK8BmgVDSt2") {
+    if (adminId === KOSTYA_ID) {
       return "Костя";
-    } else if (adminId === "ObpSKBjHoAUG1K0MFNr3rlF50Ln1") {
+    } else if (adminId === NIKITA_ID) {
       return "Никита";
     }
     return "Админ";
@@ -26,9 +29,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
     try {
       const feedbackData = await getDataFromFirebase();
       if (feedbackData) {
-        getFeedbacksFromFirebase(feedbackData);
+        getFeedbacksInStore(feedbackData);
       } else {
-        getFeedbacksFromFirebase([]);
+        getFeedbacksInStore([]);
       }
     } catch (error) {
       console.error("Ошибка при загрузке отзывов:", error);
@@ -38,9 +41,11 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
   };
 
   useEffect(() => {
-    fetchFeedbacks().then(() => {
+    const fetchData = async () => {
+      await fetchFeedbacks();
       setStoreIsChanged((state) => !state);
-    });
+    };
+    fetchData();
   }, []);
 
   return (
@@ -51,7 +56,10 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ adminId }) => {
         <p>Загрузка...</p>
       ) : (
         <div className={styles.adminContainer}>
-          <AdminFilter storeIsChanged={storeIsChanged} />
+          <div className={styles.adminContainerFilters}>
+            <AdminFilter />
+            <AdminSort storeIsChanged={storeIsChanged} />
+          </div>
           <AdminFeedbackList setStoreIsChanged={setStoreIsChanged} />
         </div>
       )}

@@ -1,6 +1,6 @@
 "use client";
 import React, { forwardRef, useState } from "react";
-import { TQuestionsData } from "@/Data/QuestionsData";
+import { TQuestionsData } from "@/data/questionsData";
 import { motion } from "framer-motion";
 
 import styles from "./SingleQuestion.module.scss";
