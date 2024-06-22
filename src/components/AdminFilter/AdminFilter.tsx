@@ -11,21 +11,9 @@ const AdminFilter: React.FC<AdminFilterProps> = () => {
   const [filterBy, setFilterBy] = useState<TFilterBy>("all");
   const feedbacks = useFeedbackStore((state) => state.feedbacks);
 
-  const filterByAllHandleClick = () => {
-    if (filterBy !== "all") {
-      setFilterBy("all");
-    }
-  };
-
-  const filterByActiveHandleClick = () => {
-    if (filterBy !== "active") {
-      setFilterBy("active");
-    }
-  };
-
-  const filterByInactiveHandleClick = () => {
-    if (filterBy !== "inactive") {
-      setFilterBy("inactive");
+  const filterByHandleClick = (filter: TFilterBy) => {
+    if (filterBy !== filter) {
+      setFilterBy(filter);
     }
   };
 
@@ -35,9 +23,19 @@ const AdminFilter: React.FC<AdminFilterProps> = () => {
 
   return (
     <div className={styles.adminFilter}>
-      <Button text="all" type="button" active={filterBy === "all"} onClick={filterByAllHandleClick} />
-      <Button text="active" type="button" active={filterBy === "active"} onClick={filterByActiveHandleClick} />
-      <Button text="inactive" type="button" active={filterBy === "inactive"} onClick={filterByInactiveHandleClick} />
+      <Button text="all" type="button" active={filterBy === "all"} onClick={() => filterByHandleClick("all")} />
+      <Button
+        text="active"
+        type="button"
+        active={filterBy === "active"}
+        onClick={() => filterByHandleClick("active")}
+      />
+      <Button
+        text="inactive"
+        type="button"
+        active={filterBy === "inactive"}
+        onClick={() => filterByHandleClick("inactive")}
+      />
     </div>
   );
 };
