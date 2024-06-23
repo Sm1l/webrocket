@@ -1,0 +1,57 @@
+.reviewCard {
+  padding: 20px 30px;
+
+  border-radius: 60px;
+
+  box-shadow: var(--shadow-lavender);
+
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.round {
+  --min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  min-height: var(--min-height);
+
+  height: auto;
+  max-width: 100%;
+
+  vertical-align: middle;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  clip-path: circle(50%);
+  shape-outside: circle(50% at 0 0);
+  shape-margin: 1rem;
+}
+
+.contacts {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.name,
+.company {
+  display: block;
+  text-align: end;
+}
+
+@media (width >= 768px) {
+  .reviewCard {
+    padding: 30px 40px;
+  }
+  .round {
+    shape-margin: 2rem;
+  }
+}
