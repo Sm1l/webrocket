@@ -10,7 +10,8 @@
 
   box-shadow: inset 0 0 25px rgb(#d3a7ff, 30%);
 
-  animation: flyAway 6000ms linear;
+  // animation: flyAway 6000ms linear;
+  // animation: flyOrbital 6000ms linear;
 
   &::before {
     position: absolute;
@@ -76,6 +77,13 @@
   }
 }
 
+.flyAway {
+  animation: flyAway 6000ms linear;
+}
+.orbital {
+  animation: flyOrbital 6000ms linear;
+}
+
 @keyframes flyAway {
   0% {
     opacity: 1;
@@ -101,5 +109,17 @@
   100% {
     opacity: 0;
     transform: translateY(-500px) translateX(0px);
+  }
+}
+
+@keyframes flyOrbital {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) translateX(30px) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) translateX(30px) rotate(-360deg);
   }
 }
