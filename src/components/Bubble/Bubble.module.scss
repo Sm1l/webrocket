@@ -10,9 +10,6 @@
 
   box-shadow: inset 0 0 25px rgb(#d3a7ff, 30%);
 
-  // animation: flyAway 6000ms linear;
-  // animation: flyOrbital 6000ms linear;
-
   &::before {
     position: absolute;
     top: 30%;
@@ -80,6 +77,7 @@
 .flyAway {
   animation: flyAway 6000ms linear;
 }
+
 .orbital {
   animation: flyOrbital 6000ms linear;
 }

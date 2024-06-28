@@ -1,28 +1,25 @@
 .reviewCard {
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
   padding: 20px 30px;
 
   border-radius: 60px;
 
   box-shadow: var(--shadow-lavender);
-
-  margin-top: 50px;
-  margin-left: 30px;
-  margin-right: 20px;
-  margin-bottom: 20px;
 }
 
 .round {
   --min-height: 150px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   float: left;
-  min-height: var(--min-height);
 
   height: auto;
   max-width: 100%;
-
-  vertical-align: middle;
+  min-height: var(--min-height);
 
   border-radius: 50%;
 
@@ -34,16 +31,18 @@
 }
 
 .contacts {
-  padding-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 6px;
   align-items: flex-end;
+
+  padding-top: 10px;
 }
 
 .name,
 .company {
   display: block;
+
   text-align: end;
 }
 
@@ -51,6 +50,7 @@
   .reviewCard {
     padding: 30px 40px;
   }
+
   .round {
     shape-margin: 2rem;
   }
