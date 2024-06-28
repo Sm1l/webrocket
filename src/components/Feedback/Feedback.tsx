@@ -19,6 +19,7 @@ const Feedback: React.FC<FeedbackProps> = () => {
       whileInView="animate"
       variants={appearAnimationTop}
       viewport={{ amount: 0.3, once: true }}
+      id="feedback"
     >
       <AnimatePresence>
         {feedbackSent ? (
