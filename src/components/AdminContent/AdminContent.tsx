@@ -35,7 +35,7 @@ const AdminContent: React.FC<AdminContentProps> = () => {
 
   return (
     <div className={styles.adminContent}>
-      {/* {isAdmin === undefined && (
+      {isAdmin === undefined && (
         <form className={styles.adminForm} onSubmit={handleSubmit(onSubmit)}>
           <InputContainer
             inputName="Электронная почта"
@@ -67,9 +67,7 @@ const AdminContent: React.FC<AdminContentProps> = () => {
         </form>
       )}
       {isAdmin === true && <AdminPanel adminId={adminId} />}
-      {isAdmin === false && <AdminLoginFalse setIsAdmin={setIsAdmin} />} */}
-      <AdminPanel adminId={adminId} />
-      {/* //!delete */}
+      {isAdmin === false && <AdminLoginFalse setIsAdmin={setIsAdmin} />}
     </div>
   );
 };
