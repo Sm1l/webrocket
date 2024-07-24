@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "../Button";
 import { appearAnimation, appearAnimationRight } from "@/assets/animations";
+import { TextWithLineBreaks } from "../../helpers/TextWithLineBreaks";
 
 import styles from "./Welcome.module.scss";
 
@@ -12,23 +13,7 @@ interface WelcomeProps {
   welcomeData: TWelcomeData;
 }
 
-interface TextWithLineBreaksProps {
-  text: string;
-}
-
 const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
-  const TextWithLineBreaks: React.FC<TextWithLineBreaksProps> = ({ text }) => {
-    const lines = text.split("\n");
-    const textWithBreaks = lines.map((line, index) => (
-      <React.Fragment key={index}>
-        {line}
-        {index < lines.length - 1 && <br />}
-      </React.Fragment>
-    ));
-
-    return <React.Fragment>{textWithBreaks}</React.Fragment>;
-  };
-
   return (
     <motion.div
       className={styles.welcome}
