@@ -70,8 +70,12 @@
   border-radius: 50%;
 
   background-color: transparent;
+}
 
-  cursor: pointer;
+@media (hover: hover) {
+  .roundElementButton {
+    cursor: pointer;
+  }
 }
 
 .small {

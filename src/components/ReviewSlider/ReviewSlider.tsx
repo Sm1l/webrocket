@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
-import { FreeMode } from "swiper/modules";
+import { FreeMode, Mousewheel } from "swiper/modules";
 
 import { reviewData } from "@/data/reviewData";
 import { ReviewCard } from "../ReviewCard";
@@ -18,7 +18,8 @@ const ReviewSlider: React.FC<ReviewSliderProps> = () => {
     <div className={styles.reviewSlider}>
       <Swiper
         speed={600}
-        modules={[FreeMode]}
+        mousewheel={true}
+        modules={[FreeMode, Mousewheel]}
         slidesPerView={1.1}
         watchSlidesProgress={true}
         breakpoints={{

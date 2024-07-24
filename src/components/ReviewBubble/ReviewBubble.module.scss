@@ -67,6 +67,11 @@
     }
   }
 }
+@media (hover: hover) {
+  .reviewBubble {
+    cursor: pointer;
+  }
+}
 
 @keyframes fly {
   0% {
