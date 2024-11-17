@@ -22,13 +22,7 @@ const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
 
   return (
     <section className={styles.welcomeSlider} id="welcome">
-      <Swiper
-        // loop={true}
-        speed={600}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Thumbs]}
-        className="welcomeMainSlider"
-      >
+      <Swiper speed={600} thumbs={{ swiper: thumbsSwiper }} modules={[FreeMode, Thumbs]} className="welcomeMainSlider">
         {welcomeData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <Welcome welcomeData={slide} />
@@ -37,7 +31,6 @@ const WelcomeSlider: React.FC<WelcomeSliderProps> = () => {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        // loop={true}
         slidesPerView={2.6}
         freeMode={true}
         watchSlidesProgress={true}
