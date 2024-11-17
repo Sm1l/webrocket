@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React, { useRef, useState } from "react";
-import logo from "../../../public/images/logo.svg";
+import React, { useEffect, useRef, useState } from "react";
 import logoWithoutCircle from "../../../public/images/logoWithoutCircle.svg";
 import circle from "../../../public/images/circle.svg";
+import { screenSizeMore767 } from "@/helpers/screenSizeMore767";
 
 import styles from "./Logo.module.scss";
 import Link from "next/link";
@@ -13,69 +13,54 @@ interface LogoProps {}
 const Logo: React.FC<LogoProps> = () => {
   const circleRef = useRef<HTMLImageElement>(null);
 
-  // const [isPaused, setIsPaused] = useState(false); // Флаг для паузы
-  // const [angle, setAngle] = useState(0); // Текущий угол на пути
+  const [isPaused, setIsPaused] = useState(false);
+  const [angle, setAngle] = useState(0);
 
-  const [isPaused, setIsPaused] = useState(false); // Флаг для паузы
-  const [angle, setAngle] = useState(0); // Текущий угол на пути
+  const [radiusX, setRadiusX] = useState(62); // Горизонтальный радиус
+  const [radiusY, setRadiusY] = useState(20); // Вертикальный радиус
+  const [pauseAngles, setPauseAngles] = useState([Math.PI * 1.737]); // Углы для паузы
+  const speed = 0.02; // Скорость изменения угла (радиан за кадр)
+  const pauseDuration = 5000; // Пауза 3 секунды
+  const angleTolerance = 0.01; // Допуск для проверки угла
 
-  const radiusX = 62; // Горизонтальный радиус
-  const radiusY = 20; // Вертикальный радиус
-  const speed = 0.01; // Скорость изменения угла (радиан за кадр)
-  const pauseDuration = 3000; // Пауза 3 секунды
+  const updateRadii = () => {
+    if (screenSizeMore767()) {
+      setRadiusX(82);
+      setRadiusY(27);
+      setPauseAngles([Math.PI * 1.705]);
+    } else {
+      setRadiusX(62);
+      setRadiusY(20);
+      setPauseAngles([Math.PI * 1.737]);
+    }
+  };
 
-  // useAnimationFrame(() => {
-  //   if (isPaused) return; // Если анимация на паузе, выходим
+  useEffect(() => {
+    updateRadii();
+    window.addEventListener("resize", updateRadii);
 
-  //   // Обновляем угол для движения
-  //   const newAngle = angle + speed;
-  //   setAngle(newAngle);
-
-  //   // Вычисляем координаты по эллиптической траектории
-  //   const x = radiusX * Math.cos(newAngle);
-  //   const y = radiusY * Math.sin(newAngle);
-
-  //   // Устанавливаем новые координаты круга
-  //   if (circleRef.current) {
-  //     circleRef.current.style.transform = `translate(${x}px, ${y}px)`;
-  //   }
-
-  //   // Проверяем завершение полного круга
-  //   if (newAngle >= Math.PI * 2) {
-  //     setIsPaused(true); // Включаем паузу
-  //     setAngle(0); // Сбрасываем угол после полного оборота
-
-  //     // Возобновляем анимацию после 3-секундной паузы
-  //     setTimeout(() => setIsPaused(false), pauseDuration);
-  //   }
-  // });
-
-  // const pauseAngles = [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2];
-  const pauseAngles = [Math.PI / 2]; //!странное поведение
-  const angleTolerance = 0.02; // Допуск для проверки угла
+    return () => {
+      window.removeEventListener("resize", updateRadii);
+    };
+  }, []);
 
   useAnimationFrame(() => {
-    if (isPaused) return; // Если анимация на паузе, выходим
+    if (isPaused) return;
 
-    // Обновляем угол для движения
     const newAngle = angle + speed;
-    setAngle(newAngle % (2 * Math.PI)); // Поддерживаем угол в диапазоне от 0 до 2π
+    setAngle(newAngle % (2 * Math.PI));
 
-    // Проверяем, достигли ли одного из углов для паузы
     const shouldPause = pauseAngles.some((pauseAngle) => Math.abs(newAngle - pauseAngle) < angleTolerance);
 
     if (shouldPause) {
-      setIsPaused(true); // Ставим анимацию на паузу
+      setIsPaused(true);
 
-      // Возобновляем анимацию после паузы
       setTimeout(() => setIsPaused(false), pauseDuration);
     }
 
-    // Вычисляем координаты по эллиптической траектории
     const x = radiusX * Math.cos(newAngle);
     const y = radiusY * Math.sin(newAngle);
 
-    // Устанавливаем новые координаты круга
     if (circleRef.current) {
       circleRef.current.style.transform = `translate(${x}px, ${y}px)`;
     }
@@ -85,9 +70,7 @@ const Logo: React.FC<LogoProps> = () => {
     <div className={styles.logo}>
       <h1 className={styles.logoTitle}>Веброкет</h1>
       <Link href="/">
-        {/* <Image className={styles.logoImg} src={logoWithoutCircle} alt="Веброкет" priority /> */}
-        <Image className={styles.logoImg} src={logo} alt="Веброкет" priority />
-        {/* //!del */}
+        <Image className={styles.logoImg} src={logoWithoutCircle} alt="Веброкет" priority />
       </Link>
       <motion.img ref={circleRef} className={styles.circle} src={circle.src} alt="Веброкет" />
     </div>
