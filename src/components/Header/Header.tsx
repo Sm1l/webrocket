@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 
 import { Container } from "../Container";
 import { Navigation } from "../Navigation";
-import { Social } from "../Social";
 import { screenSizeMore767 } from "@/helpers/screenSizeMore767";
 import { Logo } from "../Logo";
 import { motion } from "framer-motion";
@@ -48,7 +47,6 @@ const Header: React.FC<HeaderProps> = () => {
           ) : (
             <BurgerButton menuIsActive={menuIsActive} setMenuIsActive={setMenuIsActive} />
           )}
-          {/* {isWideScreen && <Social />} */}
           {isWideScreen && <div />}
         </div>
       </Container>

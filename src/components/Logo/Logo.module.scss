@@ -1,6 +1,7 @@
 .logo {
   width: 61.72px;
   height: auto;
+  position: relative;
 }
 
 .logoImg {
@@ -14,9 +15,22 @@
   opacity: 0;
 }
 
+.circle {
+  position: absolute;
+  top: 2px;
+  right: 26px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
 @media (width >= 768px) {
   .logo {
     width: 92.6px;
     min-width: 92.6px;
   }
+  // .circle {
+  //   top: -19px;
+  //   left: 23px;
+  // }
 }
