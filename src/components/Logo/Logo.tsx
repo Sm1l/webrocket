@@ -19,8 +19,8 @@ const Logo: React.FC<LogoProps> = () => {
   const [radiusX, setRadiusX] = useState(62); // Горизонтальный радиус
   const [radiusY, setRadiusY] = useState(20); // Вертикальный радиус
   const [pauseAngles, setPauseAngles] = useState([Math.PI * 1.737]); // Углы для паузы
-  const speed = 0.02; // Скорость изменения угла (радиан за кадр)
-  const pauseDuration = 5000; // Пауза 3 секунды
+  const speed = 0.011; // Скорость изменения угла (радиан за кадр)
+  const pauseDuration = 3000; // Пауза 3 секунды
   const angleTolerance = 0.01; // Допуск для проверки угла
 
   const updateRadii = () => {
