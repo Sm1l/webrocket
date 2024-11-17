@@ -37,11 +37,13 @@ const RoundElement = forwardRef<HTMLDivElement, RoundElementProps>(({ text, size
 
   return (
     <div className={`${styles.roundElement} ${roundSize(size)}`} {...props} ref={ref}>
+
       <div className={styles.roundElementButton} onClick={generateBubblesHandleClick}>
         <span className={styles.text}>{text}</span>
         <span className={styles.shadowLeft}></span>
         <span className={styles.shadowRight}></span>
       </div>
+
       {Object.entries(bubbles).map(([bubbleId, isVisible]) => isVisible && <Bubble key={bubbleId} animate="flyAway" />)}
     </div>
   );

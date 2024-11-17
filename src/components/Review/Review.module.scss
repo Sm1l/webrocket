@@ -7,10 +7,12 @@
 
   width: 100%;
   max-width: var(--max-width);
+
 }
 
 @media (width >= 1024px) {
   .review {
     gap: 60px;
+
   }
 }
