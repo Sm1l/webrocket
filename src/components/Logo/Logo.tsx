@@ -49,12 +49,10 @@ const Logo: React.FC<LogoProps> = () => {
 
     const newAngle = angle + speed;
     setAngle(newAngle % (2 * Math.PI));
-
     const shouldPause = pauseAngles.some((pauseAngle) => Math.abs(newAngle - pauseAngle) < angleTolerance);
 
     if (shouldPause) {
       setIsPaused(true);
-
       setTimeout(() => setIsPaused(false), pauseDuration);
     }
 
