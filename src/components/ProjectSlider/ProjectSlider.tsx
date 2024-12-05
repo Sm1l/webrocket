@@ -53,7 +53,9 @@ const ProjectSlider = forwardRef<HTMLDivElement, ProjectSliderProps>((_, ref) =>
         {projectsData.map((project) => (
           <SwiperSlide key={project.id}>
             <div className={styles.slideContainer}>
-              <Image className={styles.img} src={project.image} alt={project.title} />
+              <a className={styles.link} href={project.href} target="_blank">
+                <Image className={styles.img} src={project.image} alt={project.title} />
+              </a>
               <ProjectsAbout projectData={project} />
             </div>
           </SwiperSlide>
