@@ -31,8 +31,8 @@ const Welcome: React.FC<WelcomeProps> = ({ welcomeData }) => {
             {welcomeData.description}
           </motion.p>
         </div>
-        <motion.a href="#feedback" variants={appearAnimation} custom={4}>
-          <Button text="Оставить заявку" type="button" arrow={true} />
+        <motion.a href="#contacts" variants={appearAnimation} custom={4}>
+          <Button text="Напишите нам" type="button" arrow={true} />
         </motion.a>
       </div>
       <motion.div className={styles.imageContainer} variants={appearAnimation} custom={5}>

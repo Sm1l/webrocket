@@ -20,7 +20,7 @@ const Contacts: React.FC<ContactsProps> = () => {
         Наши контакты
       </motion.h2>
       <div className={styles.contactsContainer}>
-        <motion.h3 variants={appearAnimationTop} custom={2}>
+        <motion.h3 variants={appearAnimationTop} custom={2} className={styles.company}>
           ООО &quot;Веброкет&quot;
         </motion.h3>
         <motion.a className={styles.link} href="tel:+79964165496" variants={appearAnimationTop} custom={3}>
@@ -31,9 +31,22 @@ const Contacts: React.FC<ContactsProps> = () => {
           href="mailto:nickstepanovdev@gmail.com&subject=ВЕБ рокет у меня есть вопрос!"
           variants={appearAnimationTop}
           custom={4}
-        >
+          >
           <h3>nickstepanovdev@gmail.com</h3>
         </motion.a>
+        <motion.a
+          className={styles.link}
+          href="https://t.me/nickstepanov"
+          variants={appearAnimationTop}
+          custom={5}
+          >
+          <h3>Telegram: @nickstepanov</h3>
+        </motion.a>
+        <motion.div className={styles.legal} variants={appearAnimationTop} custom={6}>
+          <motion.p> ОГРН: 1232300054755</motion.p>
+          <motion.p>ИНН: 2373024287</motion.p>
+          <motion.p>КПП: 237301001</motion.p>
+        </motion.div>
       </div>
     </motion.section>
   );

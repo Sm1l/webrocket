@@ -1,26 +1,7 @@
 .communication {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
   max-width: var(--container-width);
-  padding: 0 10px;
-}
-
-@media (width >= 768px) {
-  .communication {
-    gap: 60px;
-  }
-}
-
-@media (width >= 1024px) {
-  .communication {
-    grid-template-rows: auto;
-    grid-template-columns: repeat(2, minmax(400px, 500px));
-
-    padding: 0 20px;
-  }
+  padding: 32px;
+  margin-bottom: 50px;
+  border: 2px solid var(--color-violet);
+  border-radius: 16px;
 }

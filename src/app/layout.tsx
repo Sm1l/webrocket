@@ -62,7 +62,6 @@ export default function RootLayout({
       <body className={`${gilroy.className}`}>
         <Header />
         <Main>{children}</Main>
-        <Footer />
       </body>
     </html>
   );

@@ -66,33 +66,6 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
                 <p>О студии</p>
               </Link>
             </li>
-            <li>
-              <Link
-                className={styles.link}
-                href="/policy"
-                onClick={closeHandleClick}
-              >
-                <p>Политика конфеденциальности</p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={styles.link}
-                href="/concent"
-                onClick={closeHandleClick}
-              >
-                <p>Согласие</p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={styles.link}
-                href="/questions"
-                onClick={closeHandleClick}
-              >
-                <p>Вопросы</p>
-              </Link>
-            </li>
           </ul>
         </nav>
         <div className={styles.contactsContainer}>
@@ -108,8 +81,18 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
             >
               <p>nickstepanovdev@gmail.com</p>
             </a>
+            <a
+              className={styles.link}
+              href="https://t.me/nickstepanov"
+            >
+              <p>Telegram: @nickstepanov</p>
+            </a>
+            <div className={styles.legal}>
+              <p>ОГРН: 1232300054755</p>
+              <p>ИНН: 2373024287</p>
+              <p>КПП: 237301001</p>
+            </div>
           </div>
-          <Social />
         </div>
       </div>
     </div>

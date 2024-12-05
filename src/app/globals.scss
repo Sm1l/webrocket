@@ -6,6 +6,10 @@
   font: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: grid;
   grid-template-rows: 1fr auto; /* header is absolute */
